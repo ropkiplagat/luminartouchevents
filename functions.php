@@ -529,7 +529,7 @@ function luminar_handle_enquiry() {
 		wp_send_json_error( [ 'message' => esc_html__( 'Please provide your name and a valid email.', 'luminar' ) ] );
 	}
 
-	$to      = 'enquiries@luminartouchevents.com';
+	$to      = 'faithc@luminartouchevents.com';
 	$subject = sprintf( 'New Enquiry from %s — Luminar Touch Events', $name );
 	$body    = "You have a new event enquiry!\n";
 	$body   .= str_repeat( '-', 40 ) . "\n";
@@ -544,12 +544,10 @@ function luminar_handle_enquiry() {
 	$body   .= str_repeat( '-', 40 ) . "\n";
 	$body   .= "\nReply directly to this email to respond to the client.";
 
-	$headers = [
-		'Content-Type: text/plain; charset=UTF-8',
-		'Reply-To: ' . $name . ' <' . $email . '>',
-		'CC: Faith Chepkok <chepkokfaith059@gmail.com>',
-		'CC: Rop Kiplagat <ropkiplagat@gmail.com>',
-	];
+	$headers  = "Content-Type: text/plain; charset=UTF-8\r\n";
+	$headers .= "From: Luminar Touch Events <enquiries@luminartouchevents.com>\r\n";
+	$headers .= "Reply-To: {$name} <{$email}>\r\n";
+	$headers .= "CC: ropkiplagat@gmail.com, chepkokfaith059@gmail.com\r\n";
 
 	$sent = wp_mail( $to, $subject, $body, $headers );
 
