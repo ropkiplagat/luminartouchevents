@@ -11,6 +11,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'AVIDEAS_VERSION', '1.0.0' );
+
+/* ============================================================
+   SMTP CONFIGURATION — SiteGround hosted email
+   ============================================================ */
+add_action( 'phpmailer_init', 'luminar_smtp_config' );
+function luminar_smtp_config( $phpmailer ) {
+	$phpmailer->isSMTP();
+	$phpmailer->Host       = 'mail.luminartouchevents.com';
+	$phpmailer->SMTPAuth   = true;
+	$phpmailer->Port       = 465;
+	$phpmailer->SMTPSecure = 'ssl';
+	$phpmailer->Username   = 'enquiries@luminartouchevents.com';
+	$phpmailer->Password   = '[$o]`&15}^X';
+	$phpmailer->From       = 'enquiries@luminartouchevents.com';
+	$phpmailer->FromName   = 'Luminar Touch Events';
+}
 define( 'LUMINAR_DIR', get_template_directory() );
 define( 'LUMINAR_URI', get_template_directory_uri() );
 
@@ -513,15 +529,26 @@ function luminar_handle_enquiry() {
 		wp_send_json_error( [ 'message' => esc_html__( 'Please provide your name and a valid email.', 'luminar' ) ] );
 	}
 
-	$to      = get_option( 'admin_email' );
-	$subject = sprintf( esc_html__( 'New Enquiry from %s — Luminar Touch Events', 'luminar' ), $name );
-	$body    = sprintf(
-		"Name: %s\nEmail: %s\nPhone: %s\nService: %s\nEvent Date: %s\nGuest Count: %d\n\nMessage:\n%s",
-		$name, $email, $phone, $service, $date, $guests, $message
-	);
+	$to      = 'enquiries@luminartouchevents.com';
+	$subject = sprintf( 'New Enquiry from %s — Luminar Touch Events', $name );
+	$body    = "You have a new event enquiry!\n";
+	$body   .= str_repeat( '-', 40 ) . "\n";
+	$body   .= sprintf( "Name:        %s\n", $name );
+	$body   .= sprintf( "Email:       %s\n", $email );
+	$body   .= sprintf( "Phone:       %s\n", $phone );
+	$body   .= sprintf( "Event Type:  %s\n", $service );
+	$body   .= sprintf( "Event Date:  %s\n", $date );
+	$body   .= sprintf( "Guests:      %d\n", $guests );
+	$body   .= str_repeat( '-', 40 ) . "\n";
+	$body   .= sprintf( "Message:\n%s\n", $message );
+	$body   .= str_repeat( '-', 40 ) . "\n";
+	$body   .= "\nReply directly to this email to respond to the client.";
+
 	$headers = [
 		'Content-Type: text/plain; charset=UTF-8',
 		'Reply-To: ' . $name . ' <' . $email . '>',
+		'CC: Faith Chepkok <chepkokfaith059@gmail.com>',
+		'CC: Rop Kiplagat <ropkiplagat@gmail.com>',
 	];
 
 	$sent = wp_mail( $to, $subject, $body, $headers );
