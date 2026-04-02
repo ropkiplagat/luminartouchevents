@@ -18,12 +18,12 @@ define( 'AVIDEAS_VERSION', '1.0.0' );
 add_action( 'phpmailer_init', 'luminar_smtp_config' );
 function luminar_smtp_config( $phpmailer ) {
 	$phpmailer->isSMTP();
-	$phpmailer->Host       = 'mail.luminartouchevents.com';
+	$phpmailer->Host       = defined( 'LUMINAR_SMTP_HOST' ) ? LUMINAR_SMTP_HOST : 'mail.luminartouchevents.com';
 	$phpmailer->SMTPAuth   = true;
 	$phpmailer->Port       = 465;
 	$phpmailer->SMTPSecure = 'ssl';
-	$phpmailer->Username   = 'enquiries@luminartouchevents.com';
-	$phpmailer->Password   = '[$o]`&15}^X';
+	$phpmailer->Username   = defined( 'LUMINAR_SMTP_USER' ) ? LUMINAR_SMTP_USER : 'enquiries@luminartouchevents.com';
+	$phpmailer->Password   = defined( 'LUMINAR_SMTP_PASS' ) ? LUMINAR_SMTP_PASS : '';
 	$phpmailer->From       = 'enquiries@luminartouchevents.com';
 	$phpmailer->FromName   = 'Luminar Touch Events';
 }
