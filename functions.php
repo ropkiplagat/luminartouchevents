@@ -12,6 +12,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'AVIDEAS_VERSION', '1.0.0' );
 
+require_once LUMINAR_DIR . '/inc/admin-settings.php';
+
 /* ============================================================
    SMTP CONFIGURATION — SiteGround hosted email
    ============================================================ */

@@ -434,10 +434,21 @@ $services = luminar_get_services();
 						<label class="form-label" for="enquiry-service"><?php esc_html_e( 'Type of Event *', 'luminar' ); ?></label>
 						<select id="enquiry-service" name="service" class="form-select" required>
 							<option value=""><?php esc_html_e( '— Select event type —', 'luminar' ); ?></option>
-							<?php foreach ( $services as $service ) : ?>
-							<option value="<?php echo esc_attr( $service['slug'] ); ?>"><?php echo esc_html( $service['title'] ); ?></option>
-							<?php endforeach; ?>
-							<option value="other"><?php esc_html_e( 'Other', 'luminar' ); ?></option>
+							<?php
+							$event_options = array_filter( explode( ',', get_option( 'luminar_event_types', '' ) ) );
+							if ( empty( $event_options ) ) {
+								foreach ( $services as $service ) {
+									echo '<option value="' . esc_attr( $service['slug'] ) . '">' . esc_html( $service['title'] ) . '</option>';
+								}
+							} else {
+								foreach ( $event_options as $evt ) :
+									$evt = trim( $evt );
+									$slug = sanitize_title( $evt );
+								?>
+								<option value="<?php echo esc_attr( $slug ); ?>"><?php echo esc_html( $evt ); ?></option>
+								<?php endforeach;
+							}
+							?>
 						</select>
 					</div>
 
@@ -462,11 +473,13 @@ $services = luminar_get_services();
 						<label class="form-label" for="enquiry-venue"><?php esc_html_e( 'Venue Type', 'luminar' ); ?></label>
 						<select id="enquiry-venue" name="venue" class="form-select">
 							<option value=""><?php esc_html_e( '— Select venue type —', 'luminar' ); ?></option>
-							<option value="Beach"><?php esc_html_e( 'Beach', 'luminar' ); ?></option>
-							<option value="Church"><?php esc_html_e( 'Church', 'luminar' ); ?></option>
-							<option value="Hall"><?php esc_html_e( 'Hall', 'luminar' ); ?></option>
-							<option value="Garden"><?php esc_html_e( 'Garden', 'luminar' ); ?></option>
-							<option value="Other"><?php esc_html_e( 'Other', 'luminar' ); ?></option>
+							<?php
+							$venue_options = array_filter( explode( ',', get_option( 'luminar_venue_types', 'Beach,Church,Hall,Garden,Other' ) ) );
+							foreach ( $venue_options as $venue ) :
+								$venue = trim( $venue );
+							?>
+							<option value="<?php echo esc_attr( $venue ); ?>"><?php echo esc_html( $venue ); ?></option>
+							<?php endforeach; ?>
 						</select>
 					</div>
 
