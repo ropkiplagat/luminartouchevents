@@ -83,10 +83,12 @@
 						<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
 					</span>
 					<div>
-						<div class="footer-contact__label"><?php esc_html_e( 'Email', 'luminar' ); ?></div>
-						<a href="mailto:<?php echo esc_attr( get_theme_mod( 'luminar_email', 'hello@luminartouch.com.au' ) ); ?>" class="footer-contact__value">
-							<?php echo esc_html( get_theme_mod( 'luminar_email', 'hello@luminartouch.com.au' ) ); ?>
-						</a>
+						<div class="footer-contact__label"><?php esc_html_e( 'Email Us', 'luminar' ); ?></div>
+						<a href="mailto:info@luminartouchevents.com" class="footer-contact__value">info@luminartouchevents.com</a>
+						<a href="mailto:enquiries@luminartouchevents.com" class="footer-contact__value" style="display:block; font-size:0.82rem;">enquiries@luminartouchevents.com</a>
+						<a href="mailto:bookings@luminartouchevents.com" class="footer-contact__value" style="display:block; font-size:0.82rem;">bookings@luminartouchevents.com</a>
+						<a href="mailto:sales@luminartouchevents.com" class="footer-contact__value" style="display:block; font-size:0.82rem;">sales@luminartouchevents.com</a>
+						<a href="mailto:invoices@luminartouchevents.com" class="footer-contact__value" style="display:block; font-size:0.82rem;">invoices@luminartouchevents.com</a>
 					</div>
 				</div>
 
