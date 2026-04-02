@@ -440,6 +440,7 @@ function luminar_service_icon( $service_slug ) {
 		'citizenship'    => '&#x1F1E6;&#x1F1FA;',
 		'wedding'        => '&#x1F4CD;',
 		'dinner-party'   => '&#x1F37D;',
+		'birthday'       => '&#x1F382;',
 	];
 	return $icons[ $service_slug ] ?? '&#x2728;';
 }
@@ -507,6 +508,14 @@ function luminar_get_services() {
 			'desc'  => 'Impress every guest from the moment they walk in. Luxurious table settings, candles, and florals that set the perfect ambience.',
 			'color' => '#F0E8F5',
 			'image' => $uri . '/assets/images/gallery1.jfif',
+		],
+		[
+			'slug'  => 'birthday',
+			'title' => 'Birthday Party Styling',
+			'icon'  => '&#x1F382;',
+			'desc'  => 'Make it a birthday they\'ll never forget. Bold balloon displays, themed table settings, photo walls and stunning backdrops for every age.',
+			'color' => '#FEF0E0',
+			'image' => $uri . '/assets/images/birthday party deco.png',
 		],
 	];
 }
@@ -579,6 +588,7 @@ function luminar_send_customer_followup( $name, $email, $service, $date ) {
 		'citizenship'   => 'https://drive.google.com/drive/folders/REPLACE_CITIZENSHIP',
 		'wedding'       => 'https://drive.google.com/drive/folders/REPLACE_WEDDING',
 		'dinner-party'  => 'https://drive.google.com/drive/folders/REPLACE_DINNER_PARTY',
+		'birthday'      => 'https://drive.google.com/drive/folders/REPLACE_BIRTHDAY',
 	];
 
 	$service_slug    = strtolower( str_replace( ' ', '-', $service ) );
