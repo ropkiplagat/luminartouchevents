@@ -3,14 +3,14 @@
  * Template Part: Post Card
  * Used in archive, index, and search results
  *
- * @package Avideas
+ * @package Luminar Touch Events
  */
 
 $cats = get_the_category();
-$cat_name = $cats ? $cats[0]->name : esc_html__( 'Event Inspiration', 'avideas' );
+$cat_name = $cats ? $cats[0]->name : esc_html__( 'Event Inspiration', 'luminar' );
 $img_src  = has_post_thumbnail()
 	? get_the_post_thumbnail_url( get_the_ID(), 'avideas-thumb' )
-	: avideas_placeholder_img( 600, 450, get_the_title() );
+	: luminar_placeholder_img( 600, 450, get_the_title() );
 ?>
 <article <?php post_class( 'post-card' ); ?> id="post-<?php the_ID(); ?>">
 	<a href="<?php the_permalink(); ?>" class="post-card__img-wrap" tabindex="-1" aria-hidden="true">
@@ -37,7 +37,7 @@ $img_src  = has_post_thumbnail()
 			<span>
 				<?php
 				/* translators: %s: reading time */
-				printf( esc_html__( '%s min read', 'avideas' ), esc_html( max( 1, ceil( str_word_count( get_the_content() ) / 200 ) ) ) );
+				printf( esc_html__( '%s min read', 'luminar' ), esc_html( max( 1, ceil( str_word_count( get_the_content() ) / 200 ) ) ) );
 				?>
 			</span>
 		</div>

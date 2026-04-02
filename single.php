@@ -2,7 +2,7 @@
 /**
  * Single Post Template
  *
- * @package Avideas
+ * @package Luminar Touch Events
  */
 
 get_header();
@@ -14,14 +14,14 @@ get_header();
 		<span class="page-hero__eyebrow">
 			<?php
 			$categories = get_the_category();
-			echo $categories ? esc_html( $categories[0]->name ) : esc_html__( 'Blog', 'avideas' );
+			echo $categories ? esc_html( $categories[0]->name ) : esc_html__( 'Blog', 'luminar' );
 			?>
 		</span>
 		<h1 class="page-hero__title"><?php the_title(); ?></h1>
-		<nav class="page-hero__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'avideas' ); ?>">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'avideas' ); ?></a>
+		<nav class="page-hero__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'luminar' ); ?>">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'luminar' ); ?></a>
 			<span aria-hidden="true"> / </span>
-			<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'Blog', 'avideas' ); ?></a>
+			<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'Blog', 'luminar' ); ?></a>
 			<span aria-hidden="true"> / </span>
 			<span><?php the_title(); ?></span>
 		</nav>
@@ -53,7 +53,7 @@ get_header();
 					<span>
 						<?php
 						/* translators: %s: reading time */
-						printf( esc_html__( '%s min read', 'avideas' ), esc_html( ceil( str_word_count( get_the_content() ) / 200 ) ) );
+						printf( esc_html__( '%s min read', 'luminar' ), esc_html( ceil( str_word_count( get_the_content() ) / 200 ) ) );
 						?>
 					</span>
 				</div>
@@ -65,13 +65,13 @@ get_header();
 
 				<!-- Post Footer -->
 				<div style="margin-top:var(--sp-md); padding-top:var(--sp-md); border-top:1px solid var(--clr-border);">
-					<?php the_tags( '<div style="font-size:0.82rem; color:var(--clr-muted);">' . esc_html__( 'Tags: ', 'avideas' ), ', ', '</div>' ); ?>
+					<?php the_tags( '<div style="font-size:0.82rem; color:var(--clr-muted);">' . esc_html__( 'Tags: ', 'luminar' ), ', ', '</div>' ); ?>
 				</div>
 
 			</article>
 
 			<!-- Navigation -->
-			<nav class="post-navigation" style="display:flex; justify-content:space-between; margin-top:var(--sp-lg); padding-top:var(--sp-md); border-top:1px solid var(--clr-border);" aria-label="<?php esc_attr_e( 'Post navigation', 'avideas' ); ?>">
+			<nav class="post-navigation" style="display:flex; justify-content:space-between; margin-top:var(--sp-lg); padding-top:var(--sp-md); border-top:1px solid var(--clr-border);" aria-label="<?php esc_attr_e( 'Post navigation', 'luminar' ); ?>">
 				<?php
 				$prev = get_previous_post();
 				$next = get_next_post();
@@ -92,9 +92,9 @@ get_header();
 </section>
 
 <!-- Related Posts -->
-<section class="section section--blush" aria-label="<?php esc_attr_e( 'Related posts', 'avideas' ); ?>">
+<section class="section section--blush" aria-label="<?php esc_attr_e( 'Related posts', 'luminar' ); ?>">
 	<div class="container">
-		<h2 class="text-center" style="margin-bottom:var(--sp-lg);"><?php esc_html_e( 'More Inspiration', 'avideas' ); ?></h2>
+		<h2 class="text-center" style="margin-bottom:var(--sp-lg);"><?php esc_html_e( 'More Inspiration', 'luminar' ); ?></h2>
 		<div class="archive-grid">
 			<?php
 			$cats = wp_get_post_categories( get_the_ID() );

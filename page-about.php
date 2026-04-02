@@ -2,7 +2,7 @@
 /**
  * Template Name: About Page
  *
- * @package Avideas
+ * @package Luminar Touch Events
  */
 
 get_header();
@@ -10,12 +10,12 @@ get_header();
 
 <div class="page-hero">
 	<div class="container page-hero__content">
-		<span class="page-hero__eyebrow"><?php esc_html_e( 'Our Story', 'avideas' ); ?></span>
-		<h1 class="page-hero__title"><?php esc_html_e( 'The Avideas Story', 'avideas' ); ?></h1>
-		<nav class="page-hero__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'avideas' ); ?>">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'avideas' ); ?></a>
+		<span class="page-hero__eyebrow"><?php esc_html_e( 'Our Story', 'luminar' ); ?></span>
+		<h1 class="page-hero__title"><?php esc_html_e( 'The Luminar Touch Events Story', 'luminar' ); ?></h1>
+		<nav class="page-hero__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'luminar' ); ?>">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'luminar' ); ?></a>
 			<span aria-hidden="true"> / </span>
-			<span><?php esc_html_e( 'About', 'avideas' ); ?></span>
+			<span><?php esc_html_e( 'About', 'luminar' ); ?></span>
 		</nav>
 	</div>
 </div>
@@ -26,8 +26,8 @@ get_header();
 		<div class="grid-2" style="align-items:center; gap:var(--sp-xl);">
 			<div class="reveal">
 				<img
-					src="<?php echo esc_url( avideas_placeholder_img( 800, 1000, 'Event Stylist Brisbane' ) ); ?>"
-					alt="<?php esc_attr_e( 'Avideas team — Brisbane event stylists', 'avideas' ); ?>"
+					src="<?php echo esc_url( luminar_placeholder_img( 800, 1000, 'Event Stylist Brisbane' ) ); ?>"
+					alt="<?php esc_attr_e( 'Luminar Touch Events team — Brisbane event stylists', 'luminar' ); ?>"
 					style="width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-lg);"
 					loading="eager"
 					width="800"
@@ -35,20 +35,20 @@ get_header();
 				>
 			</div>
 			<div class="reveal">
-				<span class="section-header__eyebrow" style="display:block; margin-bottom:0.75rem;"><?php esc_html_e( 'Who We Are', 'avideas' ); ?></span>
-				<h2><?php esc_html_e( "Brisbane's Trusted Event Styling Studio", 'avideas' ); ?></h2>
+				<span class="section-header__eyebrow" style="display:block; margin-bottom:0.75rem;"><?php esc_html_e( 'Who We Are', 'luminar' ); ?></span>
+				<h2><?php esc_html_e( "Brisbane's Trusted Event Styling Studio", 'luminar' ); ?></h2>
 				<div class="divider" style="justify-content:flex-start;"><div class="divider__line"></div><span class="divider__icon">&#x2665;</span></div>
 				<p style="color:var(--clr-muted); line-height:1.9; margin-bottom:1rem;">
-					<?php esc_html_e( "Avideas Event Styling was founded with one simple belief: every celebration deserves to be extraordinary. Based in Brisbane and serving clients across South East Queensland, we are passionate event stylists who transform spaces into unforgettable experiences.", 'avideas' ); ?>
+					<?php esc_html_e( "Luminar Touch Events was founded with one simple belief: every celebration deserves to be extraordinary. Based in Brisbane and serving clients across South East Queensland, we are passionate event stylists who transform spaces into unforgettable experiences.", 'luminar' ); ?>
 				</p>
 				<p style="color:var(--clr-muted); line-height:1.9; margin-bottom:1rem;">
-					<?php esc_html_e( "We specialise in baby showers, bridal showers, gender reveals, graduation parties, citizenship ceremonies, weddings, and intimate dinner parties. Each event is treated with the same level of care, creativity, and passion — whether it's an intimate gathering of ten or a grand celebration of two hundred.", 'avideas' ); ?>
+					<?php esc_html_e( "We specialise in baby showers, bridal showers, gender reveals, graduation parties, citizenship ceremonies, weddings, and intimate dinner parties. Each event is treated with the same level of care, creativity, and passion — whether it's an intimate gathering of ten or a grand celebration of two hundred.", 'luminar' ); ?>
 				</p>
 				<p style="color:var(--clr-muted); line-height:1.9;">
-					<?php esc_html_e( "Our styling philosophy centres on creating moments that feel personal and timeless. We work collaboratively with each client, listening closely to their vision and infusing our own creativity to deliver something truly spectacular.", 'avideas' ); ?>
+					<?php esc_html_e( "Our styling philosophy centres on creating moments that feel personal and timeless. We work collaboratively with each client, listening closely to their vision and infusing our own creativity to deliver something truly spectacular.", 'luminar' ); ?>
 				</p>
 				<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary mt-md">
-					<?php esc_html_e( 'Work With Us', 'avideas' ); ?>
+					<?php esc_html_e( 'Work With Us', 'luminar' ); ?>
 				</a>
 			</div>
 		</div>
@@ -59,8 +59,8 @@ get_header();
 <section class="section section--blush">
 	<div class="container">
 		<div class="section-header reveal">
-			<span class="section-header__eyebrow"><?php esc_html_e( 'Our Values', 'avideas' ); ?></span>
-			<h2 class="section-header__title"><?php esc_html_e( 'What We Stand For', 'avideas' ); ?></h2>
+			<span class="section-header__eyebrow"><?php esc_html_e( 'Our Values', 'luminar' ); ?></span>
+			<h2 class="section-header__title"><?php esc_html_e( 'What We Stand For', 'luminar' ); ?></h2>
 		</div>
 		<div class="grid-3 reveal-stagger" style="margin-top:var(--sp-lg);">
 			<?php

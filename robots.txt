@@ -1,5 +1,5 @@
-# Avideas Event Styling — robots.txt
-# https://avideas.com.au
+# Luminar Touch Events — robots.txt
+# https://luminartouchevents.com
 
 User-agent: *
 Allow: /
@@ -18,5 +18,5 @@ Disallow: /search/
 Disallow: /?s=
 
 # Sitemaps
-Sitemap: https://avideas.com.au/sitemap.xml
-Sitemap: https://avideas.com.au/sitemap_index.xml
+Sitemap: https://luminartouchevents.com/sitemap.xml
+Sitemap: https://luminartouchevents.com/sitemap_index.xml

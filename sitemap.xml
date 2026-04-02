@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <!--
-  Avideas Event Styling — XML Sitemap
+  Luminar Touch Events — XML Sitemap
   Generated: 2026-03-28
   Business: Brisbane Event Styling (Baby Showers, Bridal Showers, Gender Reveals, Graduations, Citizenship, Weddings, Dinner Parties)
 -->
@@ -11,48 +11,48 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://avideas.com.au/</loc>
+    <loc>https://luminartouchevents.com/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://avideas.com.au/wp-content/themes/avideas-theme/assets/images/og-default.jpg</image:loc>
-      <image:title>Avideas Event Styling Brisbane — Baby Showers, Weddings &amp; More</image:title>
+      <image:loc>https://luminartouchevents.com/wp-content/themes/avideas-theme/assets/images/og-default.jpg</image:loc>
+      <image:title>Luminar Touch Events Brisbane — Baby Showers, Weddings &amp; More</image:title>
       <image:caption>Brisbane's premier event styling studio for baby showers, bridal showers, gender reveals, graduations, weddings and dinner parties.</image:caption>
     </image:image>
   </url>
 
   <!-- Core Pages -->
   <url>
-    <loc>https://avideas.com.au/about/</loc>
+    <loc>https://luminartouchevents.com/about/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/services/</loc>
+    <loc>https://luminartouchevents.com/services/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/gallery/</loc>
+    <loc>https://luminartouchevents.com/gallery/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/contact/</loc>
+    <loc>https://luminartouchevents.com/contact/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/blog/</loc>
+    <loc>https://luminartouchevents.com/blog/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -60,57 +60,57 @@
 
   <!-- Service Pages -->
   <url>
-    <loc>https://avideas.com.au/services/baby-shower/</loc>
+    <loc>https://luminartouchevents.com/services/baby-shower/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
-      <image:loc>https://avideas.com.au/wp-content/themes/avideas-theme/assets/images/baby-shower-styling-brisbane.jpg</image:loc>
-      <image:title>Baby Shower Styling Brisbane — Avideas Event Styling</image:title>
+      <image:loc>https://luminartouchevents.com/wp-content/themes/avideas-theme/assets/images/baby-shower-styling-brisbane.jpg</image:loc>
+      <image:title>Baby Shower Styling Brisbane — Luminar Touch Events</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/services/bridal-shower/</loc>
+    <loc>https://luminartouchevents.com/services/bridal-shower/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/services/gender-reveal/</loc>
+    <loc>https://luminartouchevents.com/services/gender-reveal/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/services/graduation/</loc>
+    <loc>https://luminartouchevents.com/services/graduation/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/services/citizenship/</loc>
+    <loc>https://luminartouchevents.com/services/citizenship/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/services/wedding/</loc>
+    <loc>https://luminartouchevents.com/services/wedding/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image>
-      <image:loc>https://avideas.com.au/wp-content/themes/avideas-theme/assets/images/wedding-styling-brisbane.jpg</image:loc>
-      <image:title>Wedding Styling Brisbane — Avideas Event Styling</image:title>
+      <image:loc>https://luminartouchevents.com/wp-content/themes/avideas-theme/assets/images/wedding-styling-brisbane.jpg</image:loc>
+      <image:title>Wedding Styling Brisbane — Luminar Touch Events</image:title>
     </image:image>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/services/dinner-party/</loc>
+    <loc>https://luminartouchevents.com/services/dinner-party/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -118,7 +118,7 @@
 
   <!-- FAQ -->
   <url>
-    <loc>https://avideas.com.au/faq/</loc>
+    <loc>https://luminartouchevents.com/faq/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -126,14 +126,14 @@
 
   <!-- Privacy / Terms -->
   <url>
-    <loc>https://avideas.com.au/privacy-policy/</loc>
+    <loc>https://luminartouchevents.com/privacy-policy/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://avideas.com.au/terms/</loc>
+    <loc>https://luminartouchevents.com/terms/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

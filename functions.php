@@ -1,8 +1,8 @@
 <?php
 /**
- * Avideas Event Styling — functions.php
+ * Luminar Touch Events — functions.php
  *
- * @package Avideas
+ * @package Luminar Touch Events
  * @version 1.0.0
  */
 
@@ -11,14 +11,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'AVIDEAS_VERSION', '1.0.0' );
-define( 'AVIDEAS_DIR', get_template_directory() );
-define( 'AVIDEAS_URI', get_template_directory_uri() );
+define( 'LUMINAR_DIR', get_template_directory() );
+define( 'LUMINAR_URI', get_template_directory_uri() );
 
 /* ============================================================
    THEME SETUP
    ============================================================ */
-function avideas_setup() {
-	load_theme_textdomain( 'avideas', AVIDEAS_DIR . '/languages' );
+function luminar_setup() {
+	load_theme_textdomain( 'luminar', LUMINAR_DIR . '/languages' );
 
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
@@ -49,17 +49,17 @@ function avideas_setup() {
 
 	// Navigation menus
 	register_nav_menus( [
-		'primary'  => esc_html__( 'Primary Menu', 'avideas' ),
-		'footer-1' => esc_html__( 'Footer Services', 'avideas' ),
-		'footer-2' => esc_html__( 'Footer Company', 'avideas' ),
+		'primary'  => esc_html__( 'Primary Menu', 'luminar' ),
+		'footer-1' => esc_html__( 'Footer Services', 'luminar' ),
+		'footer-2' => esc_html__( 'Footer Company', 'luminar' ),
 	] );
 }
-add_action( 'after_setup_theme', 'avideas_setup' );
+add_action( 'after_setup_theme', 'luminar_setup' );
 
 /* ============================================================
    SCRIPTS & STYLES
    ============================================================ */
-function avideas_enqueue_assets() {
+function luminar_enqueue_assets() {
 	// Google Fonts
 	wp_enqueue_style(
 		'avideas-fonts',
@@ -79,16 +79,16 @@ function avideas_enqueue_assets() {
 	// Main JS
 	wp_enqueue_script(
 		'avideas-main',
-		AVIDEAS_URI . '/assets/js/main.js',
+		LUMINAR_URI . '/assets/js/main.js',
 		[],
 		AVIDEAS_VERSION,
 		true
 	);
 
 	// Localise script
-	wp_localize_script( 'avideas-main', 'avideasData', [
+	wp_localize_script( 'avideas-main', 'luminarData', [
 		'ajaxUrl' => admin_url( 'admin-ajax.php' ),
-		'nonce'   => wp_create_nonce( 'avideas_nonce' ),
+		'nonce'   => wp_create_nonce( 'luminar_nonce' ),
 		'homeUrl' => esc_url( home_url( '/' ) ),
 	] );
 
@@ -97,16 +97,16 @@ function avideas_enqueue_assets() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'avideas_enqueue_assets' );
+add_action( 'wp_enqueue_scripts', 'luminar_enqueue_assets' );
 
 /* ============================================================
    WIDGETS & SIDEBARS
    ============================================================ */
-function avideas_widgets_init() {
+function luminar_widgets_init() {
 	register_sidebar( [
-		'name'          => esc_html__( 'Blog Sidebar', 'avideas' ),
+		'name'          => esc_html__( 'Blog Sidebar', 'luminar' ),
 		'id'            => 'sidebar-blog',
-		'description'   => esc_html__( 'Widgets in this area will be shown on blog posts.', 'avideas' ),
+		'description'   => esc_html__( 'Widgets in this area will be shown on blog posts.', 'luminar' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -114,31 +114,31 @@ function avideas_widgets_init() {
 	] );
 
 	register_sidebar( [
-		'name'          => esc_html__( 'Footer Widget Area', 'avideas' ),
+		'name'          => esc_html__( 'Footer Widget Area', 'luminar' ),
 		'id'            => 'sidebar-footer',
-		'description'   => esc_html__( 'Footer widget area.', 'avideas' ),
+		'description'   => esc_html__( 'Footer widget area.', 'luminar' ),
 		'before_widget' => '<div id="%1$s" class="footer-widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h4 class="footer-widget__title">',
 		'after_title'   => '</h4>',
 	] );
 }
-add_action( 'widgets_init', 'avideas_widgets_init' );
+add_action( 'widgets_init', 'luminar_widgets_init' );
 
 /* ============================================================
    CUSTOM POST TYPES
    ============================================================ */
-function avideas_register_post_types() {
+function luminar_register_post_types() {
 	// Services CPT
 	register_post_type( 'service', [
 		'labels' => [
-			'name'               => esc_html__( 'Services', 'avideas' ),
-			'singular_name'      => esc_html__( 'Service', 'avideas' ),
-			'add_new_item'       => esc_html__( 'Add New Service', 'avideas' ),
-			'edit_item'          => esc_html__( 'Edit Service', 'avideas' ),
-			'view_item'          => esc_html__( 'View Service', 'avideas' ),
-			'search_items'       => esc_html__( 'Search Services', 'avideas' ),
-			'not_found'          => esc_html__( 'No services found.', 'avideas' ),
+			'name'               => esc_html__( 'Services', 'luminar' ),
+			'singular_name'      => esc_html__( 'Service', 'luminar' ),
+			'add_new_item'       => esc_html__( 'Add New Service', 'luminar' ),
+			'edit_item'          => esc_html__( 'Edit Service', 'luminar' ),
+			'view_item'          => esc_html__( 'View Service', 'luminar' ),
+			'search_items'       => esc_html__( 'Search Services', 'luminar' ),
+			'not_found'          => esc_html__( 'No services found.', 'luminar' ),
 		],
 		'public'        => true,
 		'has_archive'   => true,
@@ -151,9 +151,9 @@ function avideas_register_post_types() {
 	// Gallery CPT
 	register_post_type( 'gallery_item', [
 		'labels' => [
-			'name'          => esc_html__( 'Gallery', 'avideas' ),
-			'singular_name' => esc_html__( 'Gallery Item', 'avideas' ),
-			'add_new_item'  => esc_html__( 'Add Gallery Item', 'avideas' ),
+			'name'          => esc_html__( 'Gallery', 'luminar' ),
+			'singular_name' => esc_html__( 'Gallery Item', 'luminar' ),
+			'add_new_item'  => esc_html__( 'Add Gallery Item', 'luminar' ),
 		],
 		'public'       => true,
 		'has_archive'  => false,
@@ -165,9 +165,9 @@ function avideas_register_post_types() {
 	// Testimonials CPT
 	register_post_type( 'testimonial', [
 		'labels' => [
-			'name'          => esc_html__( 'Testimonials', 'avideas' ),
-			'singular_name' => esc_html__( 'Testimonial', 'avideas' ),
-			'add_new_item'  => esc_html__( 'Add Testimonial', 'avideas' ),
+			'name'          => esc_html__( 'Testimonials', 'luminar' ),
+			'singular_name' => esc_html__( 'Testimonial', 'luminar' ),
+			'add_new_item'  => esc_html__( 'Add Testimonial', 'luminar' ),
 		],
 		'public'       => false,
 		'show_ui'      => true,
@@ -176,16 +176,16 @@ function avideas_register_post_types() {
 		'show_in_rest' => true,
 	] );
 }
-add_action( 'init', 'avideas_register_post_types' );
+add_action( 'init', 'luminar_register_post_types' );
 
 /* ============================================================
    TAXONOMIES
    ============================================================ */
-function avideas_register_taxonomies() {
+function luminar_register_taxonomies() {
 	register_taxonomy( 'service_category', [ 'service' ], [
 		'labels' => [
-			'name'          => esc_html__( 'Service Categories', 'avideas' ),
-			'singular_name' => esc_html__( 'Service Category', 'avideas' ),
+			'name'          => esc_html__( 'Service Categories', 'luminar' ),
+			'singular_name' => esc_html__( 'Service Category', 'luminar' ),
 		],
 		'hierarchical' => true,
 		'show_in_rest' => true,
@@ -194,20 +194,20 @@ function avideas_register_taxonomies() {
 
 	register_taxonomy( 'gallery_category', [ 'gallery_item' ], [
 		'labels' => [
-			'name'          => esc_html__( 'Gallery Categories', 'avideas' ),
-			'singular_name' => esc_html__( 'Gallery Category', 'avideas' ),
+			'name'          => esc_html__( 'Gallery Categories', 'luminar' ),
+			'singular_name' => esc_html__( 'Gallery Category', 'luminar' ),
 		],
 		'hierarchical' => false,
 		'show_in_rest' => true,
 		'rewrite'      => [ 'slug' => 'gallery-category' ],
 	] );
 }
-add_action( 'init', 'avideas_register_taxonomies' );
+add_action( 'init', 'luminar_register_taxonomies' );
 
 /* ============================================================
    SEO & META TAGS
    ============================================================ */
-function avideas_seo_meta() {
+function luminar_seo_meta() {
 	global $post;
 
 	$site_name    = get_bloginfo( 'name' );
@@ -218,25 +218,23 @@ function avideas_seo_meta() {
 	if ( is_singular() && has_post_thumbnail() ) {
 		$og_image = get_the_post_thumbnail_url( $post->ID, 'avideas-hero' );
 	} elseif ( is_front_page() ) {
-		$logo = get_custom_logo();
-		// Use default OG image if set
-		$og_image = AVIDEAS_URI . '/assets/images/og-default.jpg';
+		$og_image  = LUMINAR_URI . '/assets/images/Luminar Touch Ebvents Logo.jpeg';
 		$canonical = home_url( '/' );
-		$description = esc_html__( 'Avideas Event Styling Brisbane — specialists in baby showers, bridal showers, gender reveals, graduation parties, citizenship ceremonies, weddings and elegant dinner parties.', 'avideas' );
+		$description = 'Luminar Touch Events — Brisbane event stylist for baby showers, weddings, gender reveals, graduations &amp; more. Bespoke styling. Free quote within 24 hours.';
 	}
 
 	if ( is_singular() ) {
 		$description = has_excerpt() ? get_the_excerpt() : $description;
 		if ( ! $og_image ) {
-			$og_image = AVIDEAS_URI . '/assets/images/og-default.jpg';
+			$og_image = LUMINAR_URI . '/assets/images/og-default.jpg';
 		}
 	}
 
 	$description = wp_strip_all_tags( $description );
-	$description = esc_attr( wp_trim_words( $description, 25 ) );
+	$description = esc_attr( mb_substr( $description, 0, 155 ) );
 	?>
 	<meta name="description" content="<?php echo $description; ?>">
-	<meta name="author" content="Avideas Event Styling">
+	<meta name="author" content="Luminar Touch Events">
 	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 	<link rel="canonical" href="<?php echo esc_url( $canonical ); ?>">
 
@@ -261,29 +259,29 @@ function avideas_seo_meta() {
 	<?php endif; ?>
 	<?php
 }
-add_action( 'wp_head', 'avideas_seo_meta', 1 );
+add_action( 'wp_head', 'luminar_seo_meta', 1 );
 
 /* ============================================================
    STRUCTURED DATA / SCHEMA
    ============================================================ */
-function avideas_schema_markup() {
+function luminar_schema_markup() {
 	if ( is_front_page() || is_home() ) {
 		$schema = [
 			'@context'        => 'https://schema.org',
 			'@type'           => 'EventPlanningService',
-			'name'            => 'Avideas Event Styling',
+			'name'            => 'Luminar Touch Events',
 			'url'             => home_url( '/' ),
-			'logo'            => AVIDEAS_URI . '/assets/images/logo.png',
-			'image'           => AVIDEAS_URI . '/assets/images/og-default.jpg',
-			'description'     => 'Brisbane\'s premier event styling specialists for baby showers, bridal showers, gender reveals, graduation parties, citizenship ceremonies, weddings and dinner parties.',
-			'telephone'       => '+61-7-XXXX-XXXX',
-			'email'           => 'hello@avideas.com.au',
+			'logo'            => LUMINAR_URI . '/assets/images/Luminar Touch Ebvents Logo.jpeg',
+			'image'           => LUMINAR_URI . '/assets/images/Wedding deco.png',
+			'description'     => 'Luminar Touch Events — Brisbane event stylist specialising in baby showers, bridal showers, gender reveals, graduation parties, citizenship ceremonies, weddings and dinner parties.',
+			'telephone'       => get_theme_mod( 'luminar_phone', '+61400000000' ),
+			'email'           => get_theme_mod( 'luminar_email', 'hello@luminartouchevents.com.au' ),
 			'priceRange'      => '$$',
 			'currenciesAccepted' => 'AUD',
 			'paymentAccepted' => 'Cash, Credit Card, Bank Transfer',
 			'address'         => [
 				'@type'           => 'PostalAddress',
-				'streetAddress'   => get_theme_mod( 'avideas_address', 'Brisbane' ),
+				'streetAddress'   => get_theme_mod( 'luminar_address', 'Brisbane' ),
 				'addressLocality' => 'Brisbane',
 				'addressRegion'   => 'QLD',
 				'postalCode'      => '4000',
@@ -313,8 +311,8 @@ function avideas_schema_markup() {
 				],
 			],
 			'sameAs' => [
-				'https://www.instagram.com/avideaseventstyling',
-				'https://www.facebook.com/avideaseventstyling',
+				get_theme_mod( 'luminar_instagram', 'https://www.instagram.com/luminartouchevents' ),
+				get_theme_mod( 'luminar_facebook',  'https://www.facebook.com/luminartouchevents' ),
 			],
 			'hasOfferCatalog' => [
 				'@type' => 'OfferCatalog',
@@ -331,6 +329,40 @@ function avideas_schema_markup() {
 			],
 		];
 		echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
+
+		// FAQ Schema — eligible for Google rich results
+		$faq_schema = [
+			'@context'   => 'https://schema.org',
+			'@type'      => 'FAQPage',
+			'mainEntity' => [
+				[
+					'@type'          => 'Question',
+					'name'           => 'What event styling services does Luminar Touch Events offer in Brisbane?',
+					'acceptedAnswer' => [ '@type' => 'Answer', 'text' => 'Luminar Touch Events offers baby shower styling, bridal shower styling, gender reveal parties, graduation celebrations, citizenship ceremony styling, wedding styling, and dinner party styling across Brisbane and the Gold Coast.' ],
+				],
+				[
+					'@type'          => 'Question',
+					'name'           => 'How far in advance should I book my event stylist?',
+					'acceptedAnswer' => [ '@type' => 'Answer', 'text' => 'We recommend booking at least 4–6 weeks in advance for most events. For weddings, 3–6 months is ideal to secure your preferred date and allow time for custom design work.' ],
+				],
+				[
+					'@type'          => 'Question',
+					'name'           => 'How much does event styling cost in Brisbane?',
+					'acceptedAnswer' => [ '@type' => 'Answer', 'text' => 'Styling packages start from $350 depending on the event type, guest count, and design complexity. We provide a free personalised quote within 24 hours — simply fill out our quote form.' ],
+				],
+				[
+					'@type'          => 'Question',
+					'name'           => 'Does Luminar Touch Events travel outside Brisbane?',
+					'acceptedAnswer' => [ '@type' => 'Answer', 'text' => 'Yes! We style events across Greater Brisbane, the Gold Coast, and the Sunshine Coast. Travel fees may apply for locations outside the Brisbane metro area.' ],
+				],
+				[
+					'@type'          => 'Question',
+					'name'           => 'Can I see examples of your event styling work?',
+					'acceptedAnswer' => [ '@type' => 'Answer', 'text' => 'Absolutely. Visit our Gallery page to see photos from real events we have styled across Brisbane — including baby showers, weddings, graduations, and gender reveals.' ],
+				],
+			],
+		];
+		echo '<script type="application/ld+json">' . wp_json_encode( $faq_schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
 	}
 
 	if ( is_singular( 'service' ) ) {
@@ -341,7 +373,7 @@ function avideas_schema_markup() {
 			'description' => wp_strip_all_tags( get_the_excerpt() ),
 			'provider'    => [
 				'@type' => 'LocalBusiness',
-				'name'  => 'Avideas Event Styling',
+				'name'  => 'Luminar Touch Events',
 				'url'   => home_url( '/' ),
 			],
 			'areaServed'  => 'Brisbane, QLD, Australia',
@@ -350,17 +382,17 @@ function avideas_schema_markup() {
 		echo '<script type="application/ld+json">' . wp_json_encode( $schema, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES ) . '</script>' . "\n";
 	}
 }
-add_action( 'wp_head', 'avideas_schema_markup' );
+add_action( 'wp_head', 'luminar_schema_markup' );
 
 /* ============================================================
    BREADCRUMBS
    ============================================================ */
-function avideas_breadcrumbs() {
+function luminar_breadcrumbs() {
 	if ( is_front_page() ) {
 		return;
 	}
-	echo '<nav class="breadcrumbs" aria-label="' . esc_attr__( 'Breadcrumbs', 'avideas' ) . '">';
-	echo '<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'avideas' ) . '</a>';
+	echo '<nav class="breadcrumbs" aria-label="' . esc_attr__( 'Breadcrumbs', 'luminar' ) . '">';
+	echo '<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'luminar' ) . '</a>';
 	echo '<span class="breadcrumbs__sep"> / </span>';
 	if ( is_singular() ) {
 		$terms = get_the_terms( get_the_ID(), 'service_category' );
@@ -373,9 +405,9 @@ function avideas_breadcrumbs() {
 	} elseif ( is_archive() ) {
 		echo '<span class="breadcrumbs__current">' . esc_html( get_the_archive_title() ) . '</span>';
 	} elseif ( is_search() ) {
-		echo '<span class="breadcrumbs__current">' . esc_html__( 'Search Results', 'avideas' ) . '</span>';
+		echo '<span class="breadcrumbs__current">' . esc_html__( 'Search Results', 'luminar' ) . '</span>';
 	} elseif ( is_404() ) {
-		echo '<span class="breadcrumbs__current">' . esc_html__( 'Page Not Found', 'avideas' ) . '</span>';
+		echo '<span class="breadcrumbs__current">' . esc_html__( 'Page Not Found', 'luminar' ) . '</span>';
 	}
 	echo '</nav>';
 }
@@ -383,7 +415,7 @@ function avideas_breadcrumbs() {
 /* ============================================================
    TEMPLATE HELPERS
    ============================================================ */
-function avideas_service_icon( $service_slug ) {
+function luminar_service_icon( $service_slug ) {
 	$icons = [
 		'baby-shower'    => '&#x1F476;',
 		'bridal-shower'  => '&#x1F492;',
@@ -396,12 +428,13 @@ function avideas_service_icon( $service_slug ) {
 	return $icons[ $service_slug ] ?? '&#x2728;';
 }
 
-function avideas_placeholder_img( $width = 800, $height = 600, $text = 'Event Photo' ) {
+function luminar_placeholder_img( $width = 800, $height = 600, $text = 'Event Photo' ) {
 	$encoded_text = rawurlencode( $text );
 	return 'https://placehold.co/' . absint( $width ) . 'x' . absint( $height ) . '/F5E6E8/C9898A?text=' . $encoded_text;
 }
 
-function avideas_get_services() {
+function luminar_get_services() {
+	$uri = get_template_directory_uri();
 	return [
 		[
 			'slug'  => 'baby-shower',
@@ -409,6 +442,7 @@ function avideas_get_services() {
 			'icon'  => '&#x1F476;',
 			'desc'  => 'Dreamy, pastel-soft setups that celebrate the arrival of a new little one. Balloon arches, floral installations, and styled dessert tables.',
 			'color' => '#F9E4EC',
+			'image' => $uri . '/assets/images/birthday party deco.png',
 		],
 		[
 			'slug'  => 'bridal-shower',
@@ -416,6 +450,7 @@ function avideas_get_services() {
 			'icon'  => '&#x1F492;',
 			'desc'  => 'Romantic, sophisticated styling for the bride-to-be. Luxe florals, elegantly set tables, and whimsical decor that photographs beautifully.',
 			'color' => '#FFF0E8',
+			'image' => $uri . '/assets/images/engagement.jpg',
 		],
 		[
 			'slug'  => 'gender-reveal',
@@ -423,6 +458,7 @@ function avideas_get_services() {
 			'icon'  => '&#x1F388;',
 			'desc'  => 'The big reveal, styled to perfection. Pink or blue? Either way, we create an unforgettable moment your family will treasure forever.',
 			'color' => '#E8F0F9',
+			'image' => $uri . '/assets/images/gender reveal.jpg',
 		],
 		[
 			'slug'  => 'graduation',
@@ -430,6 +466,7 @@ function avideas_get_services() {
 			'icon'  => '&#x1F393;',
 			'desc'  => 'Honour your graduate in style. Personalised decor, photo walls, and elegant table settings that reflect their achievement.',
 			'color' => '#F5F0E8',
+			'image' => $uri . '/assets/images/Graduation party.png',
 		],
 		[
 			'slug'  => 'citizenship',
@@ -437,6 +474,7 @@ function avideas_get_services() {
 			'icon'  => '&#x2764;&#xFE0F;',
 			'desc'  => 'A landmark moment deserves landmark styling. Dignified, warm and joyful decor that marks a new chapter in life.',
 			'color' => '#E8F5EE',
+			'image' => $uri . '/assets/images/citizenship.jpg',
 		],
 		[
 			'slug'  => 'wedding',
@@ -444,6 +482,7 @@ function avideas_get_services() {
 			'icon'  => '&#x1F4CD;',
 			'desc'  => 'Your dream wedding, brought to life. From intimate ceremonies to grand receptions, we craft your vision down to the last bloom.',
 			'color' => '#F9E8F0',
+			'image' => $uri . '/assets/images/Wedding deco.png',
 		],
 		[
 			'slug'  => 'dinner-party',
@@ -451,6 +490,7 @@ function avideas_get_services() {
 			'icon'  => '&#x1F37D;&#xFE0F;',
 			'desc'  => 'Impress every guest from the moment they walk in. Luxurious table settings, candles, and florals that set the perfect ambience.',
 			'color' => '#F0E8F5',
+			'image' => $uri . '/assets/images/gallery1.jfif',
 		],
 	];
 }
@@ -458,8 +498,8 @@ function avideas_get_services() {
 /* ============================================================
    ENQUIRY AJAX
    ============================================================ */
-function avideas_handle_enquiry() {
-	check_ajax_referer( 'avideas_nonce', 'nonce' );
+function luminar_handle_enquiry() {
+	check_ajax_referer( 'luminar_nonce', 'nonce' );
 
 	$name    = sanitize_text_field( wp_unslash( $_POST['name'] ?? '' ) );
 	$email   = sanitize_email( wp_unslash( $_POST['email'] ?? '' ) );
@@ -470,11 +510,11 @@ function avideas_handle_enquiry() {
 	$message = sanitize_textarea_field( wp_unslash( $_POST['message'] ?? '' ) );
 
 	if ( empty( $name ) || ! is_email( $email ) ) {
-		wp_send_json_error( [ 'message' => esc_html__( 'Please provide your name and a valid email.', 'avideas' ) ] );
+		wp_send_json_error( [ 'message' => esc_html__( 'Please provide your name and a valid email.', 'luminar' ) ] );
 	}
 
 	$to      = get_option( 'admin_email' );
-	$subject = sprintf( esc_html__( 'New Enquiry from %s — Avideas', 'avideas' ), $name );
+	$subject = sprintf( esc_html__( 'New Enquiry from %s — Luminar Touch Events', 'luminar' ), $name );
 	$body    = sprintf(
 		"Name: %s\nEmail: %s\nPhone: %s\nService: %s\nEvent Date: %s\nGuest Count: %d\n\nMessage:\n%s",
 		$name, $email, $phone, $service, $date, $guests, $message
@@ -487,47 +527,47 @@ function avideas_handle_enquiry() {
 	$sent = wp_mail( $to, $subject, $body, $headers );
 
 	if ( $sent ) {
-		wp_send_json_success( [ 'message' => esc_html__( 'Thank you! We\'ll be in touch soon.', 'avideas' ) ] );
+		wp_send_json_success( [ 'message' => esc_html__( 'Thank you! We\'ll be in touch soon.', 'luminar' ) ] );
 	} else {
-		wp_send_json_error( [ 'message' => esc_html__( 'Something went wrong. Please try calling us directly.', 'avideas' ) ] );
+		wp_send_json_error( [ 'message' => esc_html__( 'Something went wrong. Please try calling us directly.', 'luminar' ) ] );
 	}
 }
-add_action( 'wp_ajax_avideas_enquiry',        'avideas_handle_enquiry' );
-add_action( 'wp_ajax_nopriv_avideas_enquiry', 'avideas_handle_enquiry' );
+add_action( 'wp_ajax_luminar_enquiry',        'luminar_handle_enquiry' );
+add_action( 'wp_ajax_nopriv_luminar_enquiry', 'luminar_handle_enquiry' );
 
 /* ============================================================
    CUSTOMIZER
    ============================================================ */
-function avideas_customize_register( $wp_customize ) {
+function luminar_customize_register( $wp_customize ) {
 	// Contact details
-	$wp_customize->add_section( 'avideas_contact', [
-		'title'    => esc_html__( 'Contact Details', 'avideas' ),
+	$wp_customize->add_section( 'luminar_contact', [
+		'title'    => esc_html__( 'Contact Details', 'luminar' ),
 		'priority' => 30,
 	] );
 
 	$contact_fields = [
-		'phone'   => esc_html__( 'Phone Number', 'avideas' ),
-		'email'   => esc_html__( 'Email Address', 'avideas' ),
-		'address' => esc_html__( 'Business Address', 'avideas' ),
-		'instagram' => esc_html__( 'Instagram URL', 'avideas' ),
-		'facebook'  => esc_html__( 'Facebook URL', 'avideas' ),
+		'phone'   => esc_html__( 'Phone Number', 'luminar' ),
+		'email'   => esc_html__( 'Email Address', 'luminar' ),
+		'address' => esc_html__( 'Business Address', 'luminar' ),
+		'instagram' => esc_html__( 'Instagram URL', 'luminar' ),
+		'facebook'  => esc_html__( 'Facebook URL', 'luminar' ),
 	];
 
 	foreach ( $contact_fields as $id => $label ) {
-		$wp_customize->add_setting( 'avideas_' . $id, [
+		$wp_customize->add_setting( 'luminar_' . $id, [
 			'default'           => '',
 			'sanitize_callback' => 'sanitize_text_field',
 		] );
-		$wp_customize->add_control( 'avideas_' . $id, [
+		$wp_customize->add_control( 'luminar_' . $id, [
 			'label'   => $label,
-			'section' => 'avideas_contact',
+			'section' => 'luminar_contact',
 			'type'    => 'text',
 		] );
 	}
 
 	// Hero section
-	$wp_customize->add_section( 'avideas_hero', [
-		'title'    => esc_html__( 'Hero Section', 'avideas' ),
+	$wp_customize->add_section( 'luminar_hero', [
+		'title'    => esc_html__( 'Hero Section', 'luminar' ),
 		'priority' => 25,
 	] );
 
@@ -538,31 +578,31 @@ function avideas_customize_register( $wp_customize ) {
 	];
 
 	foreach ( $hero_fields as $id => $args ) {
-		$wp_customize->add_setting( 'avideas_' . $id, [
+		$wp_customize->add_setting( 'luminar_' . $id, [
 			'default'           => $args['default'],
 			'sanitize_callback' => 'sanitize_text_field',
 		] );
-		$wp_customize->add_control( 'avideas_' . $id, [
+		$wp_customize->add_control( 'luminar_' . $id, [
 			'label'   => $args['label'],
-			'section' => 'avideas_hero',
+			'section' => 'luminar_hero',
 			'type'    => 'text',
 		] );
 	}
 }
-add_action( 'customize_register', 'avideas_customize_register' );
+add_action( 'customize_register', 'luminar_customize_register' );
 
 /* ============================================================
    EXCERPT LENGTH
    ============================================================ */
-function avideas_excerpt_length( $length ) {
+function luminar_excerpt_length( $length ) {
 	return 20;
 }
-add_filter( 'excerpt_length', 'avideas_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'luminar_excerpt_length', 999 );
 
-function avideas_excerpt_more( $more ) {
+function luminar_excerpt_more( $more ) {
 	return '&hellip;';
 }
-add_filter( 'excerpt_more', 'avideas_excerpt_more' );
+add_filter( 'excerpt_more', 'luminar_excerpt_more' );
 
 /* ============================================================
    SECURITY HARDENING
@@ -572,24 +612,30 @@ remove_action( 'wp_head', 'wlwmanifest_link' );
 remove_action( 'wp_head', 'rsd_link' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 
-function avideas_remove_version( $src ) {
+function luminar_remove_version( $src ) {
 	if ( strpos( $src, 'ver=' ) ) {
 		$src = remove_query_arg( 'ver', $src );
 	}
 	return $src;
 }
-add_filter( 'style_loader_src',  'avideas_remove_version', 9999 );
-add_filter( 'script_loader_src', 'avideas_remove_version', 9999 );
+add_filter( 'style_loader_src',  'luminar_remove_version', 9999 );
+add_filter( 'script_loader_src', 'luminar_remove_version', 9999 );
+
+/* ============================================================
+   DEMO CONTENT INSTALLER
+   ============================================================ */
+require_once LUMINAR_DIR . '/inc/demo-content.php';
+require_once LUMINAR_DIR . '/inc/event-booking.php';
 
 /* ============================================================
    SITEMAP PING
    ============================================================ */
-function avideas_ping_sitemap( $post_id ) {
+function luminar_ping_sitemap( $post_id ) {
 	if ( wp_is_post_revision( $post_id ) || wp_is_post_autosave( $post_id ) ) {
 		return;
 	}
 	$sitemap_url = esc_url_raw( home_url( '/sitemap.xml' ) );
 	wp_remote_get( 'https://www.google.com/ping?sitemap=' . rawurlencode( $sitemap_url ) );
 }
-add_action( 'publish_post',    'avideas_ping_sitemap' );
-add_action( 'publish_service', 'avideas_ping_sitemap' );
+add_action( 'publish_post',    'luminar_ping_sitemap' );
+add_action( 'publish_service', 'luminar_ping_sitemap' );

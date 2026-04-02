@@ -3,7 +3,7 @@
  * Main Index Template — Fallback for all unmatched templates.
  * Also serves as the Blog page when no posts page is set.
  *
- * @package Avideas
+ * @package Luminar Touch Events
  */
 
 get_header();
@@ -12,20 +12,20 @@ get_header();
 <!-- Page Hero -->
 <div class="page-hero">
 	<div class="container page-hero__content">
-		<span class="page-hero__eyebrow"><?php esc_html_e( 'Avideas Event Styling', 'avideas' ); ?></span>
+		<span class="page-hero__eyebrow"><?php esc_html_e( 'Luminar Touch Events', 'luminar' ); ?></span>
 		<?php if ( is_home() && ! is_front_page() ) : ?>
-			<h1 class="page-hero__title"><?php esc_html_e( 'Blog & Inspiration', 'avideas' ); ?></h1>
+			<h1 class="page-hero__title"><?php esc_html_e( 'Blog & Inspiration', 'luminar' ); ?></h1>
 		<?php elseif ( is_search() ) : ?>
 			<h1 class="page-hero__title">
 				<?php
 				/* translators: %s: search query */
-				printf( esc_html__( 'Search Results: %s', 'avideas' ), '<em>' . get_search_query() . '</em>' );
+				printf( esc_html__( 'Search Results: %s', 'luminar' ), '<em>' . get_search_query() . '</em>' );
 				?>
 			</h1>
 		<?php elseif ( is_archive() ) : ?>
 			<h1 class="page-hero__title"><?php the_archive_title(); ?></h1>
 		<?php else : ?>
-			<h1 class="page-hero__title"><?php esc_html_e( 'Latest Posts', 'avideas' ); ?></h1>
+			<h1 class="page-hero__title"><?php esc_html_e( 'Latest Posts', 'luminar' ); ?></h1>
 		<?php endif; ?>
 	</div>
 </div>
@@ -56,35 +56,35 @@ get_header();
 					</div>
 				<?php else : ?>
 					<div class="text-center" style="padding: var(--sp-xl) 0;">
-						<h2><?php esc_html_e( 'Nothing Found', 'avideas' ); ?></h2>
-						<p><?php esc_html_e( 'Try a different search or browse our services.', 'avideas' ); ?></p>
+						<h2><?php esc_html_e( 'Nothing Found', 'luminar' ); ?></h2>
+						<p><?php esc_html_e( 'Try a different search or browse our services.', 'luminar' ); ?></p>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn--primary mt-md">
-							<?php esc_html_e( 'Back Home', 'avideas' ); ?>
+							<?php esc_html_e( 'Back Home', 'luminar' ); ?>
 						</a>
 					</div>
 				<?php endif; ?>
 			</div>
 
 			<!-- Sidebar -->
-			<aside class="sidebar" role="complementary" aria-label="<?php esc_attr_e( 'Blog sidebar', 'avideas' ); ?>">
+			<aside class="sidebar" role="complementary" aria-label="<?php esc_attr_e( 'Blog sidebar', 'luminar' ); ?>">
 				<?php if ( is_active_sidebar( 'sidebar-blog' ) ) : ?>
 					<?php dynamic_sidebar( 'sidebar-blog' ); ?>
 				<?php else : ?>
 					<!-- Default sidebar content -->
 					<div class="widget" style="background:var(--clr-blush); padding:var(--sp-md); border-radius:var(--radius-lg);">
-						<h3 class="widget-title" style="font-size:1rem; margin-bottom:1rem;"><?php esc_html_e( 'Book Your Event', 'avideas' ); ?></h3>
+						<h3 class="widget-title" style="font-size:1rem; margin-bottom:1rem;"><?php esc_html_e( 'Book Your Event', 'luminar' ); ?></h3>
 						<p style="font-size:0.88rem; color:var(--clr-muted); margin-bottom:1rem;">
-							<?php esc_html_e( 'Ready to start planning? Get in touch for a free consultation.', 'avideas' ); ?>
+							<?php esc_html_e( 'Ready to start planning? Get in touch for a free consultation.', 'luminar' ); ?>
 						</p>
 						<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary btn--sm">
-							<?php esc_html_e( 'Get a Quote', 'avideas' ); ?>
+							<?php esc_html_e( 'Get a Quote', 'luminar' ); ?>
 						</a>
 					</div>
 
 					<div class="widget" style="margin-top:var(--sp-md);">
-						<h3 class="widget-title" style="font-size:1rem; margin-bottom:1rem;"><?php esc_html_e( 'Our Services', 'avideas' ); ?></h3>
+						<h3 class="widget-title" style="font-size:1rem; margin-bottom:1rem;"><?php esc_html_e( 'Our Services', 'luminar' ); ?></h3>
 						<ul style="list-style:none; padding:0;">
-							<?php foreach ( avideas_get_services() as $service ) : ?>
+							<?php foreach ( luminar_get_services() as $service ) : ?>
 							<li style="margin-bottom:0.5rem;">
 								<a href="<?php echo esc_url( home_url( '/services/' . $service['slug'] . '/' ) ); ?>" style="font-size:0.9rem; color:var(--clr-text);">
 									<?php echo $service['icon']; ?> <?php echo esc_html( $service['title'] ); ?>

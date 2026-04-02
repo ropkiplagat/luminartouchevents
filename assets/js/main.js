@@ -1,5 +1,5 @@
 /**
- * Avideas Event Styling — Main JavaScript
+ * Luminar Touch Events — Main JavaScript
  * @version 1.0.0
  */
 
@@ -280,13 +280,13 @@
         setLoading(submitBtn, true);
 
         var data = new FormData(form);
-        data.append('action', 'avideas_enquiry');
+        data.append('action', 'luminar_enquiry');
 
         var nonce = form.querySelector('[name="nonce"]');
         if (nonce) data.set('nonce', nonce.value);
 
         fetch(
-          (window.avideasData && window.avideasData.ajaxUrl) || '/wp-admin/admin-ajax.php',
+          (window.luminarData && window.luminarData.ajaxUrl) || '/wp-admin/admin-ajax.php',
           { method: 'POST', body: data }
         )
         .then(function (r) { return r.json(); })

@@ -2,7 +2,7 @@
 /**
  * Default Page Template
  *
- * @package Avideas
+ * @package Luminar Touch Events
  */
 
 get_header();
@@ -11,10 +11,10 @@ get_header();
 <!-- Page Hero -->
 <div class="page-hero">
 	<div class="container page-hero__content">
-		<span class="page-hero__eyebrow"><?php esc_html_e( 'Avideas Event Styling', 'avideas' ); ?></span>
+		<span class="page-hero__eyebrow"><?php esc_html_e( 'Luminar Touch Events', 'luminar' ); ?></span>
 		<h1 class="page-hero__title"><?php the_title(); ?></h1>
-		<nav class="page-hero__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'avideas' ); ?>">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'avideas' ); ?></a>
+		<nav class="page-hero__breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'luminar' ); ?>">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'luminar' ); ?></a>
 			<span aria-hidden="true"> / </span>
 			<span><?php the_title(); ?></span>
 		</nav>

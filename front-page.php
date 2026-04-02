@@ -2,159 +2,157 @@
 /**
  * Front Page Template
  *
- * @package Avideas
+ * @package Luminar Touch Events
  */
 
 get_header();
 
-$services = avideas_get_services();
+$uri      = get_template_directory_uri();
+$services = luminar_get_services();
 ?>
 
 <!-- ============================================================
      HERO SECTION
      ============================================================ -->
-<section class="hero" id="hero" aria-label="<?php esc_attr_e( 'Hero banner', 'avideas' ); ?>">
-	<div class="hero__bg" id="hero-bg"></div>
+<section class="hero" id="hero" aria-label="<?php esc_attr_e( 'Hero banner', 'luminar' ); ?>">
+	<div class="hero__bg" id="hero-bg" style="background-image: url('<?php echo esc_url( $uri ); ?>/assets/images/Wedding deco.png');"></div>
 
 	<div class="hero__content">
 		<span class="hero__eyebrow">
-			<?php echo esc_html( get_theme_mod( 'avideas_hero_eyebrow', "Brisbane's Premier Event Stylists" ) ); ?>
+			<?php echo esc_html( get_theme_mod( 'luminar_hero_eyebrow', "Brisbane's Premier Event Stylists" ) ); ?>
 		</span>
 
 		<h1 class="hero__title">
-			<?php esc_html_e( 'Creating Moments', 'avideas' ); ?><br>
-			<em><?php esc_html_e( 'Worth Remembering', 'avideas' ); ?></em>
+			<?php esc_html_e( 'Brisbane Event Stylist', 'luminar' ); ?><br>
+			<em><?php esc_html_e( 'Creating Moments Worth Remembering', 'luminar' ); ?></em>
 		</h1>
 
 		<p class="hero__subtitle">
-			<?php echo esc_html( get_theme_mod( 'avideas_hero_subtitle', "Bespoke event styling for life's most meaningful celebrations — from intimate gatherings to grand affairs." ) ); ?>
+			<?php echo esc_html( get_theme_mod( 'luminar_hero_subtitle', "Luminar Touch Events — bespoke event styling in Brisbane for baby showers, weddings, graduations, gender reveals and more. Free quote in 24 hours." ) ); ?>
 		</p>
 
 		<div class="hero__actions">
 			<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn--primary btn--lg">
-				<?php esc_html_e( 'Book Your Event', 'avideas' ); ?>
+				<?php esc_html_e( 'Book Your Event', 'luminar' ); ?>
 			</a>
 			<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" class="btn btn--ghost btn--lg">
-				<?php esc_html_e( 'View Gallery', 'avideas' ); ?>
+				<?php esc_html_e( 'View Gallery', 'luminar' ); ?>
 			</a>
 		</div>
 	</div>
 
 	<div class="hero__scroll" aria-hidden="true">
 		<div class="hero__scroll-arrow"></div>
-		<span><?php esc_html_e( 'Scroll', 'avideas' ); ?></span>
+		<span><?php esc_html_e( 'Scroll', 'luminar' ); ?></span>
 	</div>
 </section>
 
 <!-- Marquee Bar -->
 <div class="marquee-bar" aria-hidden="true">
 	<div class="marquee-track" id="marquee-track">
-		<span class="marquee-item"><?php esc_html_e( 'Baby Showers', 'avideas' ); ?></span>
-		<span class="marquee-item"><?php esc_html_e( 'Bridal Showers', 'avideas' ); ?></span>
-		<span class="marquee-item"><?php esc_html_e( 'Gender Reveals', 'avideas' ); ?></span>
-		<span class="marquee-item"><?php esc_html_e( 'Graduations', 'avideas' ); ?></span>
-		<span class="marquee-item"><?php esc_html_e( 'Citizenship Ceremonies', 'avideas' ); ?></span>
-		<span class="marquee-item"><?php esc_html_e( 'Weddings', 'avideas' ); ?></span>
-		<span class="marquee-item"><?php esc_html_e( 'Dinner Parties', 'avideas' ); ?></span>
+		<span class="marquee-item"><?php esc_html_e( 'Baby Showers', 'luminar' ); ?></span>
+		<span class="marquee-item"><?php esc_html_e( 'Bridal Showers', 'luminar' ); ?></span>
+		<span class="marquee-item"><?php esc_html_e( 'Gender Reveals', 'luminar' ); ?></span>
+		<span class="marquee-item"><?php esc_html_e( 'Graduations', 'luminar' ); ?></span>
+		<span class="marquee-item"><?php esc_html_e( 'Citizenship Ceremonies', 'luminar' ); ?></span>
+		<span class="marquee-item"><?php esc_html_e( 'Weddings', 'luminar' ); ?></span>
+		<span class="marquee-item"><?php esc_html_e( 'Dinner Parties', 'luminar' ); ?></span>
 		<!-- Duplicate for seamless loop -->
-		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Baby Showers', 'avideas' ); ?></span>
-		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Bridal Showers', 'avideas' ); ?></span>
-		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Gender Reveals', 'avideas' ); ?></span>
-		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Graduations', 'avideas' ); ?></span>
-		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Citizenship Ceremonies', 'avideas' ); ?></span>
-		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Weddings', 'avideas' ); ?></span>
-		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Dinner Parties', 'avideas' ); ?></span>
+		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Baby Showers', 'luminar' ); ?></span>
+		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Bridal Showers', 'luminar' ); ?></span>
+		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Gender Reveals', 'luminar' ); ?></span>
+		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Graduations', 'luminar' ); ?></span>
+		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Citizenship Ceremonies', 'luminar' ); ?></span>
+		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Weddings', 'luminar' ); ?></span>
+		<span class="marquee-item" aria-hidden="true"><?php esc_html_e( 'Dinner Parties', 'luminar' ); ?></span>
 	</div>
 </div>
 
 <!-- ============================================================
-     SERVICES SECTION
+     COLLECTIONS — 4-col image overlay cards (luminartouch.com.au style)
      ============================================================ -->
-<section class="section section--cream" id="services" aria-label="<?php esc_attr_e( 'Our services', 'avideas' ); ?>">
-	<div class="container">
+<section id="collections" aria-label="<?php esc_attr_e( 'Event collections', 'luminar' ); ?>">
 
-		<div class="section-header reveal">
-			<span class="section-header__eyebrow"><?php esc_html_e( 'What We Do', 'avideas' ); ?></span>
-			<h2 class="section-header__title"><?php esc_html_e( 'Every Celebration, Beautifully Styled', 'avideas' ); ?></h2>
-			<div class="divider"><div class="divider__line"></div><span class="divider__icon">&#x2665;</span><div class="divider__line"></div></div>
-			<p class="section-header__desc">
-				<?php esc_html_e( "From the softest baby showers to grand wedding receptions, we bring your vision to life with elegance and warmth.", 'avideas' ); ?>
-			</p>
-		</div>
+	<?php
+	$collections = [
+		[
+			'title'  => 'Baby Showers',
+			'sub'    => 'Celebrate New Life',
+			'slug'   => 'baby-shower',
+			'image'  => $uri . '/assets/images/birthday party deco.png',
+		],
+		[
+			'title'  => 'Weddings',
+			'sub'    => 'Your Perfect Day',
+			'slug'   => 'wedding',
+			'image'  => $uri . '/assets/images/Wedding deco.png',
+		],
+		[
+			'title'  => 'Graduations',
+			'sub'    => 'Mark the Milestone',
+			'slug'   => 'graduation',
+			'image'  => $uri . '/assets/images/Graduation party.png',
+		],
+		[
+			'title'  => 'Gender Reveals',
+			'sub'    => 'Big Announcement Magic',
+			'slug'   => 'gender-reveal',
+			'image'  => $uri . '/assets/images/gender reveal.jfif',
+		],
+	];
+	?>
 
-		<div class="services-grid reveal-stagger">
-			<?php foreach ( $services as $service ) : ?>
-			<a href="<?php echo esc_url( home_url( '/services/' . $service['slug'] . '/' ) ); ?>" class="service-card" aria-label="<?php echo esc_attr( $service['title'] ); ?>">
-				<div class="service-card__img-wrap">
-					<?php
-					$img_src = avideas_placeholder_img( 800, 600, $service['title'] );
-					$args = [
-						'post_type'      => 'service',
-						'name'           => $service['slug'],
-						'posts_per_page' => 1,
-					];
-					$service_query = new WP_Query( $args );
-					if ( $service_query->have_posts() ) {
-						$service_query->the_post();
-						if ( has_post_thumbnail() ) {
-							$img_src = get_the_post_thumbnail_url( get_the_ID(), 'avideas-service' );
-						}
-						wp_reset_postdata();
-					}
-					?>
-					<img
-						src="<?php echo esc_url( $img_src ); ?>"
-						alt="<?php echo esc_attr( $service['title'] ); ?>"
-						class="service-card__img"
-						loading="lazy"
-						width="800"
-						height="600"
-					>
-					<div class="service-card__overlay"></div>
-					<span class="service-card__badge badge badge--rose"><?php esc_html_e( 'Brisbane', 'avideas' ); ?></span>
+	<div class="collections-grid">
+		<?php foreach ( $collections as $col ) : ?>
+		<a href="<?php echo esc_url( home_url( '/services/' . $col['slug'] . '/' ) ); ?>" class="collection-card" aria-label="<?php echo esc_attr( $col['title'] ); ?>">
+			<img
+				src="<?php echo esc_url( $col['image'] ); ?>"
+				alt="<?php echo esc_attr( $col['title'] . ' — Luminar Touch Events Brisbane' ); ?>"
+				class="collection-card__img"
+				loading="lazy"
+				width="480"
+				height="640"
+			>
+			<div class="collection-card__overlay"></div>
+			<div class="collection-card__label">
+				<div class="collection-card__title"><?php echo esc_html( $col['title'] ); ?></div>
+				<div class="collection-card__sub"><?php echo esc_html( $col['sub'] ); ?></div>
+				<div class="collection-card__arrow" aria-hidden="true">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
 				</div>
-				<div class="service-card__body">
-					<div class="service-card__icon" aria-hidden="true"><?php echo $service['icon']; ?></div>
-					<h3 class="service-card__title"><?php echo esc_html( $service['title'] ); ?></h3>
-					<p class="service-card__desc"><?php echo esc_html( $service['desc'] ); ?></p>
-					<span class="service-card__link">
-						<?php esc_html_e( 'Learn More', 'avideas' ); ?>
-						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-					</span>
-				</div>
-			</a>
-			<?php endforeach; ?>
-		</div>
-
-		<div class="text-center mt-lg">
-			<a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn--outline">
-				<?php esc_html_e( 'All Services', 'avideas' ); ?>
-			</a>
-		</div>
-
+			</div>
+		</a>
+		<?php endforeach; ?>
 	</div>
+
+	<div style="text-align:center; padding: var(--sp-md) 0 var(--sp-lg);">
+		<a href="<?php echo esc_url( home_url( '/services/' ) ); ?>" class="btn btn--outline">
+			<?php esc_html_e( 'See All Services', 'luminar' ); ?>
+		</a>
+	</div>
+
 </section>
 
 <!-- ============================================================
      ABOUT / STORY SECTION
      ============================================================ -->
-<section class="section section--blush about-section" id="about" aria-label="<?php esc_attr_e( 'About Avideas', 'avideas' ); ?>">
+<section class="section section--blush about-section" id="about" aria-label="<?php esc_attr_e( 'About Luminar Touch Events', 'luminar' ); ?>">
 	<div class="container">
 		<div class="grid-2">
 
 			<!-- Image Stack -->
 			<div class="about-img-stack reveal">
 				<img
-					src="<?php echo esc_url( avideas_placeholder_img( 600, 800, 'Event Styling Brisbane' ) ); ?>"
-					alt="<?php esc_attr_e( 'Avideas event styling setup — Brisbane', 'avideas' ); ?>"
+					src="<?php echo esc_url( $uri . '/assets/images/engagement.jpg' ); ?>"
+					alt="<?php esc_attr_e( 'Luminar Touch Events — elegant event styling Brisbane', 'luminar' ); ?>"
 					class="about-img-stack__main"
 					loading="lazy"
 					width="600"
 					height="800"
 				>
 				<img
-					src="<?php echo esc_url( avideas_placeholder_img( 400, 400, 'Florals & Decor' ) ); ?>"
-					alt="<?php esc_attr_e( 'Elegant floral arrangement and event decor', 'avideas' ); ?>"
+					src="<?php echo esc_url( $uri . '/assets/images/gallery2.jfif' ); ?>"
+					alt="<?php esc_attr_e( 'Beautiful floral arrangement and event decor', 'luminar' ); ?>"
 					class="about-img-stack__accent"
 					loading="lazy"
 					width="400"
@@ -164,36 +162,36 @@ $services = avideas_get_services();
 
 			<!-- Content -->
 			<div class="about-content reveal">
-				<span class="about-content__eyebrow section-header__eyebrow"><?php esc_html_e( 'Our Story', 'avideas' ); ?></span>
-				<h2 class="about-content__title"><?php esc_html_e( "Brisbane's Most Loved Event Stylists", 'avideas' ); ?></h2>
+				<span class="about-content__eyebrow section-header__eyebrow"><?php esc_html_e( 'Our Story', 'luminar' ); ?></span>
+				<h2 class="about-content__title"><?php esc_html_e( "Brisbane's Most Loved Event Styling Studio", 'luminar' ); ?></h2>
 				<div class="divider" style="justify-content:flex-start; margin-bottom:1.5rem;">
 					<div class="divider__line"></div>
 					<span class="divider__icon">&#x2665;</span>
 				</div>
 				<p class="about-content__text">
-					<?php esc_html_e( "We believe every milestone deserves to be celebrated in style. Avideas was born from a passion for creating beautiful, meaningful spaces that tell your unique story.", 'avideas' ); ?>
+					<?php esc_html_e( "We believe every milestone deserves to be celebrated in style. Luminar Touch Events was born from a passion for creating beautiful, meaningful spaces that tell your unique story.", 'luminar' ); ?>
 				</p>
 				<p class="about-content__text">
-					<?php esc_html_e( "Our team of dedicated stylists works closely with you to understand your vision, then brings it to life with exquisite florals, custom installations, and perfectly curated decor.", 'avideas' ); ?>
+					<?php esc_html_e( "Our team of dedicated stylists works closely with you to understand your vision, then brings it to life with exquisite florals, custom installations, and perfectly curated decor.", 'luminar' ); ?>
 				</p>
 
 				<div class="stat-row">
 					<div class="stat-item">
 						<span class="stat-item__num">500+</span>
-						<span class="stat-item__label"><?php esc_html_e( 'Events Styled', 'avideas' ); ?></span>
+						<span class="stat-item__label"><?php esc_html_e( 'Events Styled', 'luminar' ); ?></span>
 					</div>
 					<div class="stat-item">
 						<span class="stat-item__num">8+</span>
-						<span class="stat-item__label"><?php esc_html_e( "Years' Experience", 'avideas' ); ?></span>
+						<span class="stat-item__label"><?php esc_html_e( "Years' Experience", 'luminar' ); ?></span>
 					</div>
 					<div class="stat-item">
 						<span class="stat-item__num">100%</span>
-						<span class="stat-item__label"><?php esc_html_e( '5-Star Reviews', 'avideas' ); ?></span>
+						<span class="stat-item__label"><?php esc_html_e( '5-Star Reviews', 'luminar' ); ?></span>
 					</div>
 				</div>
 
 				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="btn btn--primary mt-md">
-					<?php esc_html_e( 'Meet the Team', 'avideas' ); ?>
+					<?php esc_html_e( 'Meet the Team', 'luminar' ); ?>
 				</a>
 			</div>
 
@@ -202,63 +200,78 @@ $services = avideas_get_services();
 </section>
 
 <!-- ============================================================
-     GALLERY PREVIEW
+     INSTAGRAM / SOCIAL FOLLOW SECTION
      ============================================================ -->
-<section class="section section--cream" id="gallery-preview" aria-label="<?php esc_attr_e( 'Gallery preview', 'avideas' ); ?>">
-	<div class="container">
-		<div class="section-header reveal">
-			<span class="section-header__eyebrow"><?php esc_html_e( 'Our Work', 'avideas' ); ?></span>
-			<h2 class="section-header__title"><?php esc_html_e( 'A Gallery of Beautiful Moments', 'avideas' ); ?></h2>
-			<div class="divider"><div class="divider__line"></div><span class="divider__icon">&#x2665;</span><div class="divider__line"></div></div>
-		</div>
+<section class="section section--cream" id="social-follow" style="padding-bottom: 0;" aria-label="<?php esc_attr_e( 'Follow us on Instagram', 'luminar' ); ?>">
+	<div class="container text-center" style="padding-bottom: var(--sp-md);">
+		<p style="font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--clr-rose); font-weight:700; margin-bottom:0.4rem;">
+			<?php esc_html_e( 'Follow Our Work', 'luminar' ); ?>
+		</p>
+		<h2 style="font-family:var(--font-display); font-size:clamp(1.5rem,3vw,2.2rem); color:var(--clr-dark); margin-bottom:0.3rem;">
+			<?php esc_html_e( '@luminartouchevents', 'luminar' ); ?>
+		</h2>
+		<p style="color:var(--clr-muted); font-size:0.9rem; margin-bottom:var(--sp-md);">
+			<?php esc_html_e( 'Tag us in your photos and be featured here.', 'luminar' ); ?>
+		</p>
+	</div>
 
-		<div class="gallery-masonry reveal">
-			<?php
-			$gallery_labels = [
-				[ 'Baby Shower Styling Brisbane',        3, 4 ],
-				[ 'Bridal Shower Decor Brisbane',        4, 3 ],
-				[ 'Wedding Reception Styling Brisbane',  3, 3 ],
-				[ 'Gender Reveal Party Brisbane',        4, 4 ],
-				[ 'Graduation Party Styling Brisbane',   3, 3 ],
-				[ 'Elegant Dinner Party Brisbane',       4, 3 ],
-			];
-			foreach ( $gallery_labels as $i => $item ) :
-				list( $label, $w, $h ) = $item;
-				$w_px = $w * 100;
-				$h_px = $h * 100;
-			?>
-			<div class="gallery-masonry__item" data-lightbox>
-				<img
-					src="<?php echo esc_url( avideas_placeholder_img( $w_px, $h_px, $label ) ); ?>"
-					alt="<?php echo esc_attr( $label ); ?>"
-					loading="lazy"
-					width="<?php echo esc_attr( $w_px ); ?>"
-					height="<?php echo esc_attr( $h_px ); ?>"
-				>
-				<div class="gallery-masonry__caption">
-					<span><?php echo esc_html( $label ); ?></span>
-				</div>
+	<!-- Tight Instagram-style gallery grid -->
+	<div class="gallery-grid" aria-label="<?php esc_attr_e( 'Instagram gallery', 'luminar' ); ?>">
+		<?php
+		$grid_images = [
+			[ $uri . '/assets/images/gallery1.jfif',             'Baby shower styling Brisbane' ],
+			[ $uri . '/assets/images/gallery2.jfif',             'Bridal shower decor Brisbane' ],
+			[ $uri . '/assets/images/gallery 3.jfif',            'Elegant event styling Brisbane' ],
+			[ $uri . '/assets/images/gallery4.jfif',             'Wedding reception styling Brisbane' ],
+			[ $uri . '/assets/images/gallery45.jfif',            'Gender reveal party Brisbane' ],
+			[ $uri . '/assets/images/engagement.jpg',            'Engagement party decor Brisbane' ],
+			[ $uri . '/assets/images/citizenship.jpg',           'Citizenship ceremony styling Brisbane' ],
+			[ $uri . '/assets/images/gender reveal.jpg',         'Gender reveal setup Brisbane' ],
+			[ $uri . '/assets/images/Graduation ceremoby.jfif',  'Graduation ceremony styling Brisbane' ],
+		];
+		foreach ( $grid_images as $gi ) :
+		?>
+		<div class="gallery-grid__item" data-lightbox>
+			<img
+				src="<?php echo esc_url( $gi[0] ); ?>"
+				alt="<?php echo esc_attr( $gi[1] ); ?>"
+				loading="lazy"
+				width="400"
+				height="400"
+			>
+			<div class="gallery-grid__item__overlay" aria-hidden="true">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+					<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+				</svg>
 			</div>
-			<?php endforeach; ?>
 		</div>
+		<?php endforeach; ?>
+	</div>
 
-		<div class="text-center mt-lg">
-			<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" class="btn btn--outline">
-				<?php esc_html_e( 'View Full Gallery', 'avideas' ); ?>
-			</a>
-		</div>
-
+	<div style="text-align:center; padding: var(--sp-md) 0 var(--sp-lg);">
+		<a
+			href="<?php echo esc_url( get_theme_mod( 'luminar_instagram', 'https://www.instagram.com/' ) ); ?>"
+			class="btn btn--outline"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<?php esc_html_e( 'Follow on Instagram', 'luminar' ); ?>
+		</a>
+		&nbsp;
+		<a href="<?php echo esc_url( home_url( '/gallery/' ) ); ?>" class="btn btn--ghost" style="color:var(--clr-rose); border-color:var(--clr-rose);">
+			<?php esc_html_e( 'View Full Gallery', 'luminar' ); ?>
+		</a>
 	</div>
 </section>
 
 <!-- ============================================================
      PROCESS / HOW IT WORKS
      ============================================================ -->
-<section class="section section--linen" id="process" aria-label="<?php esc_attr_e( 'Our process', 'avideas' ); ?>">
+<section class="section section--linen" id="process" aria-label="<?php esc_attr_e( 'Our process', 'luminar' ); ?>">
 	<div class="container">
 		<div class="section-header reveal">
-			<span class="section-header__eyebrow"><?php esc_html_e( 'How It Works', 'avideas' ); ?></span>
-			<h2 class="section-header__title"><?php esc_html_e( 'Your Event, Our Expertise', 'avideas' ); ?></h2>
+			<span class="section-header__eyebrow"><?php esc_html_e( 'How It Works', 'luminar' ); ?></span>
+			<h2 class="section-header__title"><?php esc_html_e( 'Your Event, Our Expertise', 'luminar' ); ?></h2>
 			<div class="divider"><div class="divider__line"></div><span class="divider__icon">&#x2665;</span><div class="divider__line"></div></div>
 		</div>
 
@@ -289,11 +302,11 @@ $services = avideas_get_services();
 <!-- ============================================================
      TESTIMONIALS
      ============================================================ -->
-<section class="section testimonials" id="testimonials" aria-label="<?php esc_attr_e( 'Client testimonials', 'avideas' ); ?>">
+<section class="section testimonials" id="testimonials" aria-label="<?php esc_attr_e( 'Client testimonials', 'luminar' ); ?>">
 	<div class="container">
 		<div class="section-header reveal">
-			<span class="section-header__eyebrow"><?php esc_html_e( 'Happy Clients', 'avideas' ); ?></span>
-			<h2 class="section-header__title"><?php esc_html_e( 'What Our Clients Say', 'avideas' ); ?></h2>
+			<span class="section-header__eyebrow"><?php esc_html_e( 'Happy Clients', 'luminar' ); ?></span>
+			<h2 class="section-header__title"><?php esc_html_e( 'What Our Clients Say', 'luminar' ); ?></h2>
 			<div class="divider"><div class="divider__line" style="background:rgba(255,255,255,0.3);"></div><span class="divider__icon">&#x2665;</span><div class="divider__line" style="background:rgba(255,255,255,0.3);"></div></div>
 		</div>
 
@@ -308,25 +321,24 @@ $services = avideas_get_services();
 					'order'          => 'ASC',
 				]);
 
-				// Fallback testimonials if none in DB
 				$fallback = [
 					[
-						'quote'  => '"Avideas transformed our baby shower into an absolute fairytale. Every single detail was perfect — the florals, the balloon arch, the dessert table. Our guests could not stop talking about it!"',
+						'quote'  => '"Luminar Touch Events transformed our baby shower into an absolute fairytale. Every single detail was perfect — the florals, the balloon arch, the dessert table. Our guests could not stop talking about it!"',
 						'name'   => 'Sarah M.',
 						'event'  => 'Baby Shower — Brisbane',
 					],
 					[
-						'quote'  => '"I cannot recommend Avideas enough. They took my bridal shower vision and exceeded every expectation. The styling was elegant, romantic, and utterly breathtaking."',
+						'quote'  => '"I cannot recommend Luminar Touch Events enough. They took my bridal shower vision and exceeded every expectation. The styling was elegant, romantic, and utterly breathtaking."',
 						'name'   => 'Jessica K.',
 						'event'  => 'Bridal Shower — Brisbane Southside',
 					],
 					[
-						'quote'  => '"From our first consultation to the final pack-down, the Avideas team were professional, creative, and just lovely to work with. Our wedding looked like a magazine shoot!"',
+						'quote'  => '"From our first consultation to the final pack-down, the team were professional, creative, and just lovely to work with. Our wedding looked like a magazine shoot!"',
 						'name'   => 'Emma & David',
 						'event'  => 'Wedding Styling — Brisbane',
 					],
 					[
-						'quote'  => '"The gender reveal setup was beyond anything I could have imagined. So many of our guests asked who did the styling — I was so proud to share the Avideas name."',
+						'quote'  => '"The gender reveal setup was beyond anything I could have imagined. So many of our guests asked who did the styling — I was so proud to share the Luminar Touch Events name."',
 						'name'   => 'Priya T.',
 						'event'  => 'Gender Reveal Party — Brisbane North',
 					],
@@ -340,7 +352,7 @@ $services = avideas_get_services();
 						?>
 						<div class="testimonial-card">
 							<div class="testimonial-card__inner">
-								<div class="testimonial-card__stars" aria-label="<?php esc_attr_e( '5 stars', 'avideas' ); ?>">★★★★★</div>
+								<div class="testimonial-card__stars" aria-label="<?php esc_attr_e( '5 stars', 'luminar' ); ?>">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 								<blockquote class="testimonial-card__quote"><?php echo wp_kses_post( $quote ); ?></blockquote>
 								<div class="testimonial-card__author">
 									<?php if ( has_post_thumbnail() ) : ?>
@@ -362,7 +374,7 @@ $services = avideas_get_services();
 					foreach ( $fallback as $t ) : ?>
 					<div class="testimonial-card">
 						<div class="testimonial-card__inner">
-							<div class="testimonial-card__stars" aria-label="<?php esc_attr_e( '5 stars', 'avideas' ); ?>">★★★★★</div>
+							<div class="testimonial-card__stars" aria-label="<?php esc_attr_e( '5 stars', 'luminar' ); ?>">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
 							<blockquote class="testimonial-card__quote"><?php echo esc_html( $t['quote'] ); ?></blockquote>
 							<div class="testimonial-card__author">
 								<div class="testimonial-card__avatar" style="background:var(--clr-blush); width:48px;height:48px;border-radius:50%;"></div>
@@ -379,65 +391,65 @@ $services = avideas_get_services();
 			</div><!-- .testimonial-track -->
 		</div>
 
-		<div class="testimonial-nav" id="testimonial-nav" role="tablist" aria-label="<?php esc_attr_e( 'Testimonial navigation', 'avideas' ); ?>"></div>
+		<div class="testimonial-nav" id="testimonial-nav" role="tablist" aria-label="<?php esc_attr_e( 'Testimonial navigation', 'luminar' ); ?>"></div>
 
 	</div>
 </section>
 
 <!-- ============================================================
-     ENQUIRY / CTA SECTION
+     ENQUIRY — "Tell Us About Your Event"
      ============================================================ -->
-<section class="section enquiry-section" id="enquiry" aria-label="<?php esc_attr_e( 'Enquiry form', 'avideas' ); ?>">
+<section class="section enquiry-section" id="enquiry" aria-label="<?php esc_attr_e( 'Event enquiry form', 'luminar' ); ?>">
 	<div class="container">
 		<div class="section-header reveal">
-			<span class="section-header__eyebrow"><?php esc_html_e( 'Book Your Event', 'avideas' ); ?></span>
-			<h2 class="section-header__title"><?php esc_html_e( "Let's Create Something Beautiful", 'avideas' ); ?></h2>
+			<span class="section-header__eyebrow"><?php esc_html_e( 'Free Quote', 'luminar' ); ?></span>
+			<h2 class="section-header__title"><?php esc_html_e( 'Tell Us About Your Event', 'luminar' ); ?></h2>
 			<div class="divider"><div class="divider__line"></div><span class="divider__icon">&#x2665;</span><div class="divider__line"></div></div>
 			<p class="section-header__desc">
-				<?php esc_html_e( "Tell us about your special occasion and we'll get back to you within 24 hours with ideas and availability.", 'avideas' ); ?>
+				<?php esc_html_e( "Share your vision and we'll get back to you within 24 hours with availability and ideas.", 'luminar' ); ?>
 			</p>
 		</div>
 
 		<div class="enquiry-form reveal" id="enquiry-form-wrap">
-			<form id="enquiry-form" novalidate aria-label="<?php esc_attr_e( 'Event enquiry form', 'avideas' ); ?>">
-				<?php wp_nonce_field( 'avideas_nonce', 'nonce' ); ?>
+			<form id="enquiry-form" novalidate aria-label="<?php esc_attr_e( 'Event enquiry form', 'luminar' ); ?>">
+				<?php wp_nonce_field( 'luminar_nonce', 'nonce' ); ?>
 
 				<div class="form-grid">
 					<div class="form-group">
-						<label class="form-label" for="enquiry-name"><?php esc_html_e( 'Your Name *', 'avideas' ); ?></label>
-						<input type="text" id="enquiry-name" name="name" class="form-input" placeholder="<?php esc_attr_e( 'e.g. Sarah Johnson', 'avideas' ); ?>" required autocomplete="name">
+						<label class="form-label" for="enquiry-name"><?php esc_html_e( 'Your Name *', 'luminar' ); ?></label>
+						<input type="text" id="enquiry-name" name="name" class="form-input" placeholder="<?php esc_attr_e( 'e.g. Sarah Johnson', 'luminar' ); ?>" required autocomplete="name">
 					</div>
 
 					<div class="form-group">
-						<label class="form-label" for="enquiry-email"><?php esc_html_e( 'Email Address *', 'avideas' ); ?></label>
-						<input type="email" id="enquiry-email" name="email" class="form-input" placeholder="<?php esc_attr_e( 'hello@example.com', 'avideas' ); ?>" required autocomplete="email">
+						<label class="form-label" for="enquiry-email"><?php esc_html_e( 'Email Address *', 'luminar' ); ?></label>
+						<input type="email" id="enquiry-email" name="email" class="form-input" placeholder="<?php esc_attr_e( 'hello@example.com', 'luminar' ); ?>" required autocomplete="email">
 					</div>
 
 					<div class="form-group">
-						<label class="form-label" for="enquiry-phone"><?php esc_html_e( 'Phone Number', 'avideas' ); ?></label>
-						<input type="tel" id="enquiry-phone" name="phone" class="form-input" placeholder="<?php esc_attr_e( '0400 000 000', 'avideas' ); ?>" autocomplete="tel">
+						<label class="form-label" for="enquiry-phone"><?php esc_html_e( 'Phone Number *', 'luminar' ); ?></label>
+						<input type="tel" id="enquiry-phone" name="phone" class="form-input" placeholder="<?php esc_attr_e( '0400 000 000', 'luminar' ); ?>" required autocomplete="tel">
 					</div>
 
 					<div class="form-group">
-						<label class="form-label" for="enquiry-service"><?php esc_html_e( 'Type of Event *', 'avideas' ); ?></label>
+						<label class="form-label" for="enquiry-service"><?php esc_html_e( 'Type of Event *', 'luminar' ); ?></label>
 						<select id="enquiry-service" name="service" class="form-select" required>
-							<option value=""><?php esc_html_e( '— Select event type —', 'avideas' ); ?></option>
+							<option value=""><?php esc_html_e( '— Select event type —', 'luminar' ); ?></option>
 							<?php foreach ( $services as $service ) : ?>
 							<option value="<?php echo esc_attr( $service['slug'] ); ?>"><?php echo esc_html( $service['title'] ); ?></option>
 							<?php endforeach; ?>
-							<option value="other"><?php esc_html_e( 'Other', 'avideas' ); ?></option>
+							<option value="other"><?php esc_html_e( 'Other', 'luminar' ); ?></option>
 						</select>
 					</div>
 
 					<div class="form-group">
-						<label class="form-label" for="enquiry-date"><?php esc_html_e( 'Event Date', 'avideas' ); ?></label>
-						<input type="date" id="enquiry-date" name="event_date" class="form-input">
+						<label class="form-label" for="enquiry-date"><?php esc_html_e( 'Event Date *', 'luminar' ); ?></label>
+						<input type="date" id="enquiry-date" name="event_date" class="form-input" required>
 					</div>
 
 					<div class="form-group">
-						<label class="form-label" for="enquiry-guests"><?php esc_html_e( 'Estimated Guests', 'avideas' ); ?></label>
+						<label class="form-label" for="enquiry-guests"><?php esc_html_e( 'Estimated Guests', 'luminar' ); ?></label>
 						<select id="enquiry-guests" name="guests" class="form-select">
-							<option value=""><?php esc_html_e( '— Guest count —', 'avideas' ); ?></option>
+							<option value=""><?php esc_html_e( '— Guest count —', 'luminar' ); ?></option>
 							<option value="10">1–10</option>
 							<option value="25">11–25</option>
 							<option value="50">26–50</option>
@@ -446,21 +458,38 @@ $services = avideas_get_services();
 						</select>
 					</div>
 
+					<div class="form-group">
+						<label class="form-label" for="enquiry-venue"><?php esc_html_e( 'Venue / Location', 'luminar' ); ?></label>
+						<input type="text" id="enquiry-venue" name="venue" class="form-input" placeholder="<?php esc_attr_e( 'e.g. Home, The Greek Club, Brisbane City', 'luminar' ); ?>">
+					</div>
+
+					<div class="form-group">
+						<label class="form-label" for="enquiry-budget"><?php esc_html_e( 'Budget Range', 'luminar' ); ?></label>
+						<select id="enquiry-budget" name="budget" class="form-select">
+							<option value=""><?php esc_html_e( '— Select budget —', 'luminar' ); ?></option>
+							<option value="under500"><?php esc_html_e( 'Under $500', 'luminar' ); ?></option>
+							<option value="500-1500"><?php esc_html_e( '$500 – $1,500', 'luminar' ); ?></option>
+							<option value="1500-3000"><?php esc_html_e( '$1,500 – $3,000', 'luminar' ); ?></option>
+							<option value="3000-5000"><?php esc_html_e( '$3,000 – $5,000', 'luminar' ); ?></option>
+							<option value="5000plus"><?php esc_html_e( '$5,000+', 'luminar' ); ?></option>
+						</select>
+					</div>
+
 					<div class="form-group form-group--full">
-						<label class="form-label" for="enquiry-message"><?php esc_html_e( 'Tell Us About Your Vision', 'avideas' ); ?></label>
-						<textarea id="enquiry-message" name="message" class="form-textarea" rows="4" placeholder="<?php esc_attr_e( "Describe the theme, colours, venue, or any special requests you have in mind...", 'avideas' ); ?>"></textarea>
+						<label class="form-label" for="enquiry-message"><?php esc_html_e( 'Your Vision & Special Requests', 'luminar' ); ?></label>
+						<textarea id="enquiry-message" name="message" class="form-textarea" rows="4" placeholder="<?php esc_attr_e( "Describe your theme, colour palette, inspiration, or any special details you have in mind...", 'luminar' ); ?>"></textarea>
 					</div>
 
 					<div class="form-group form-group--full text-center">
 						<button type="submit" class="btn btn--primary btn--lg" id="enquiry-submit">
-							<span class="btn-text"><?php esc_html_e( 'Send My Enquiry', 'avideas' ); ?></span>
+							<span class="btn-text"><?php esc_html_e( 'Send My Enquiry', 'luminar' ); ?></span>
 							<span class="btn-loading" style="display:none;">
-								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite;"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-								<?php esc_html_e( 'Sending...', 'avideas' ); ?>
+								<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite;" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+								<?php esc_html_e( 'Sending...', 'luminar' ); ?>
 							</span>
 						</button>
 						<p style="font-size:0.75rem; color:var(--clr-muted); margin-top:0.75rem;">
-							<?php esc_html_e( 'We respond within 24 hours. No spam, ever.', 'avideas' ); ?>
+							<?php esc_html_e( 'We respond within 24 hours. Your details are kept private.', 'luminar' ); ?>
 						</p>
 					</div>
 
@@ -470,28 +499,6 @@ $services = avideas_get_services();
 
 			</form>
 		</div><!-- .enquiry-form -->
-	</div>
-</section>
-
-<!-- ============================================================
-     INSTAGRAM / SOCIAL STRIP
-     ============================================================ -->
-<section class="section section--dark" style="padding: var(--sp-lg) 0;" aria-label="<?php esc_attr_e( 'Follow us on Instagram', 'avideas' ); ?>">
-	<div class="container text-center">
-		<p style="font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--clr-gold); font-weight:700; margin-bottom:0.5rem;">
-			<?php esc_html_e( 'Follow Our Story', 'avideas' ); ?>
-		</p>
-		<h2 style="color:var(--clr-white); font-size:clamp(1.4rem,3vw,2rem); margin-bottom:1.5rem;">
-			<?php esc_html_e( '@avideaseventstyling', 'avideas' ); ?>
-		</h2>
-		<a
-			href="<?php echo esc_url( get_theme_mod( 'avideas_instagram', 'https://www.instagram.com/' ) ); ?>"
-			class="btn btn--ghost"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<?php esc_html_e( 'Follow on Instagram', 'avideas' ); ?>
-		</a>
 	</div>
 </section>
 
