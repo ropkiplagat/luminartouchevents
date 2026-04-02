@@ -505,8 +505,42 @@ $services = luminar_get_services();
 				<div id="form-response" style="display:none;" role="alert" aria-live="polite"></div>
 
 			</form>
+
+			<!-- Calendly — shown after form submit -->
+			<div id="enquiry-calendly" style="display:none; margin-top:2rem;">
+				<div style="text-align:center; margin-bottom:1.5rem;">
+					<p style="font-size:1.1rem; font-weight:600; color:var(--clr-rose);"><?php esc_html_e( 'One last step — pick a time for us to call you!', 'luminar' ); ?></p>
+					<p style="color:var(--clr-muted); font-size:0.9rem;"><?php esc_html_e( 'Choose a time that suits you and Faith will call you back to discuss your event.', 'luminar' ); ?></p>
+				</div>
+				<div class="calendly-inline-widget"
+					data-url="https://calendly.com/chepkokfaith059?hide_gdpr_banner=1&primary_color=c9898a"
+					style="min-width:320px; height:700px;">
+				</div>
+			</div>
+
 		</div><!-- .enquiry-form -->
 	</div>
 </section>
+
+<script>
+(function() {
+	var form = document.getElementById('enquiry-form');
+	if (!form) return;
+	form.addEventListener('luminar:success', function() {
+		var cal = document.getElementById('enquiry-calendly');
+		if (cal) {
+			cal.style.display = 'block';
+			cal.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			// Load Calendly widget script once
+			if (!document.querySelector('script[src*="calendly.com/assets/external/widget.js"]')) {
+				var s = document.createElement('script');
+				s.src = 'https://assets.calendly.com/assets/external/widget.js';
+				s.async = true;
+				document.head.appendChild(s);
+			}
+		}
+	});
+})();
+</script>
 
 <?php get_footer(); ?>

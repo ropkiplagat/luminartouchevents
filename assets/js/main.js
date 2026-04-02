@@ -294,6 +294,7 @@
           if (json.success) {
             showResponse(responseEl, 'success', json.data.message || 'Thank you! We\'ll be in touch soon.');
             form.reset();
+            form.dispatchEvent(new CustomEvent('luminar:success', { bubbles: true }));
           } else {
             showResponse(responseEl, 'error', (json.data && json.data.message) || 'Something went wrong. Please try again.');
           }
