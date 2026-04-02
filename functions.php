@@ -552,6 +552,8 @@ function luminar_handle_enquiry() {
 	$sent = wp_mail( $to, $subject, $body, $headers );
 
 	if ( $sent ) {
+		// Send follow-up email to the customer
+		luminar_send_customer_followup( $name, $email, $service, $date );
 		wp_send_json_success( [ 'message' => esc_html__( 'Thank you! We\'ll be in touch soon.', 'luminar' ) ] );
 	} else {
 		wp_send_json_error( [ 'message' => esc_html__( 'Something went wrong. Please try calling us directly.', 'luminar' ) ] );
@@ -559,6 +561,62 @@ function luminar_handle_enquiry() {
 }
 add_action( 'wp_ajax_luminar_enquiry',        'luminar_handle_enquiry' );
 add_action( 'wp_ajax_nopriv_luminar_enquiry', 'luminar_handle_enquiry' );
+
+/* ============================================================
+   CUSTOMER FOLLOW-UP EMAIL
+   Sent to the customer after their enquiry is received.
+   Contains gallery of similar events + Calendly booking link.
+   ============================================================ */
+function luminar_send_customer_followup( $name, $email, $service, $date ) {
+
+	// Google Drive gallery links per service type
+	// Replace each URL with your actual Google Drive shared folder link
+	$galleries = [
+		'baby-shower'   => 'https://drive.google.com/drive/folders/REPLACE_BABY_SHOWER',
+		'bridal-shower' => 'https://drive.google.com/drive/folders/REPLACE_BRIDAL_SHOWER',
+		'gender-reveal' => 'https://drive.google.com/drive/folders/REPLACE_GENDER_REVEAL',
+		'graduation'    => 'https://drive.google.com/drive/folders/REPLACE_GRADUATION',
+		'citizenship'   => 'https://drive.google.com/drive/folders/REPLACE_CITIZENSHIP',
+		'wedding'       => 'https://drive.google.com/drive/folders/REPLACE_WEDDING',
+		'dinner-party'  => 'https://drive.google.com/drive/folders/REPLACE_DINNER_PARTY',
+	];
+
+	$service_slug    = strtolower( str_replace( ' ', '-', $service ) );
+	$gallery_url     = $galleries[ $service_slug ] ?? 'https://luminartouchevents.com/gallery/';
+	$service_label   = ucwords( str_replace( '-', ' ', $service_slug ) );
+	$calendly_url    = 'https://calendly.com/luminartouchevents/consultation';
+	$first_name      = explode( ' ', $name )[0];
+
+	$subject = 'Your Luminar Touch Events Enquiry — What to Expect Next';
+
+	$body  = "Hi {$first_name},\n\n";
+	$body .= "Thank you for reaching out to Luminar Touch Events!\n\n";
+	$body .= "We've received your enquiry for your {$service_label} on {$date} and we're so excited to help you create something beautiful.\n\n";
+	$body .= str_repeat( '-', 50 ) . "\n";
+	$body .= "INSPIRATION GALLERY — {$service_label}\n";
+	$body .= str_repeat( '-', 50 ) . "\n";
+	$body .= "We've put together a gallery of similar events we've styled to give you an idea of what's possible:\n\n";
+	$body .= "  View Gallery: {$gallery_url}\n\n";
+	$body .= "Browse through and take note of any looks, colours, or setups that inspire you — it will help us personalise your quote.\n\n";
+	$body .= str_repeat( '-', 50 ) . "\n";
+	$body .= "WHAT HAPPENS NEXT\n";
+	$body .= str_repeat( '-', 50 ) . "\n";
+	$body .= "1. Faith from our team will call you within 24 hours to discuss your vision\n";
+	$body .= "2. We'll prepare a personalised quote based on your requirements\n";
+	$body .= "3. Once you're happy, we lock in your date with a small deposit\n\n";
+	$body .= "Prefer to book a time for your consultation right now? Pick a slot here:\n\n";
+	$body .= "  Book a Free Consultation: {$calendly_url}\n\n";
+	$body .= str_repeat( '-', 50 ) . "\n";
+	$body .= "Warm regards,\n";
+	$body .= "Faith & The Luminar Touch Events Team\n";
+	$body .= "enquiries@luminartouchevents.com\n";
+	$body .= "luminartouchevents.com\n";
+
+	$headers  = "Content-Type: text/plain; charset=UTF-8\r\n";
+	$headers .= "From: Faith — Luminar Touch Events <enquiries@luminartouchevents.com>\r\n";
+
+	wp_mail( $email, $subject, $body, $headers );
+}
 
 /* ============================================================
    CUSTOMIZER
