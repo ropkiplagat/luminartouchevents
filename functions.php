@@ -594,7 +594,7 @@ function luminar_send_customer_followup( $name, $email, $service, $date ) {
 	$service_slug    = strtolower( str_replace( ' ', '-', $service ) );
 	$gallery_url     = $galleries[ $service_slug ] ?? 'https://luminartouchevents.com/gallery/';
 	$service_label   = ucwords( str_replace( '-', ' ', $service_slug ) );
-	$calendly_url    = 'https://calendly.com/luminartouchevents/consultation';
+	$calendly_url    = 'https://calendly.com/chepkokfaith059';
 	$first_name      = explode( ' ', $name )[0];
 
 	$subject = 'Your Luminar Touch Events Enquiry — What to Expect Next';

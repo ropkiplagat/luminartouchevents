@@ -118,7 +118,7 @@ function luminar_event_details_cb( $post ) {
 				<input type="url" id="luminar_calendly_url" name="luminar_calendly_url"
 					value="<?php echo esc_url( $calendly ); ?>"
 					class="regular-text"
-					placeholder="https://calendly.com/luminartouchevents/consultation" />
+					placeholder="https://calendly.com/chepkokfaith059" />
 				<p class="description">Unique Calendly link for this event type. Leave blank to use the default.</p>
 			</td>
 		</tr>
@@ -350,7 +350,7 @@ function luminar_enqueue_booking_assets() {
 	wp_localize_script( 'luminar-booking', 'luminarBooking', [
 		'ajaxUrl'     => admin_url( 'admin-ajax.php' ),
 		'nonce'       => wp_create_nonce( 'luminar_booking_nonce' ),
-		'defaultCal'  => 'https://calendly.com/luminartouchevents/consultation',
+		'defaultCal'  => 'https://calendly.com/chepkokfaith059',
 		'currency'    => '$',
 	] );
 }
@@ -487,7 +487,7 @@ function luminar_ajax_submit_booking() {
 	$sent = wp_mail( $to, $subject, $body, $headers );
 
 	$calendly = get_post_meta( $event_id, '_luminar_calendly_url', true )
-		?: 'https://calendly.com/luminartouchevents/consultation';
+		?: 'https://calendly.com/chepkokfaith059';
 
 	if ( $sent ) {
 		wp_send_json_success( [
