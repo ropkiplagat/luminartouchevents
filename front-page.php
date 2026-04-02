@@ -459,8 +459,15 @@ $services = luminar_get_services();
 					</div>
 
 					<div class="form-group">
-						<label class="form-label" for="enquiry-venue"><?php esc_html_e( 'Venue / Location', 'luminar' ); ?></label>
-						<input type="text" id="enquiry-venue" name="venue" class="form-input" placeholder="<?php esc_attr_e( 'e.g. Home, The Greek Club, Brisbane City', 'luminar' ); ?>">
+						<label class="form-label" for="enquiry-venue"><?php esc_html_e( 'Venue Type', 'luminar' ); ?></label>
+						<select id="enquiry-venue" name="venue" class="form-select">
+							<option value=""><?php esc_html_e( '— Select venue type —', 'luminar' ); ?></option>
+							<option value="Beach"><?php esc_html_e( 'Beach', 'luminar' ); ?></option>
+							<option value="Church"><?php esc_html_e( 'Church', 'luminar' ); ?></option>
+							<option value="Hall"><?php esc_html_e( 'Hall', 'luminar' ); ?></option>
+							<option value="Garden"><?php esc_html_e( 'Garden', 'luminar' ); ?></option>
+							<option value="Other"><?php esc_html_e( 'Other', 'luminar' ); ?></option>
+						</select>
 					</div>
 
 					<div class="form-group">

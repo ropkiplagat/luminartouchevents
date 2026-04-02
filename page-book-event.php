@@ -101,12 +101,10 @@ get_header();
 							</label>
 							<select class="lb-input" id="lbVenue" name="venue" required>
 								<option value="">— Select venue —</option>
-								<option value="Hotel ballroom">Hotel Ballroom</option>
-								<option value="Garden / outdoor">Garden / Outdoor</option>
+								<option value="Beach">Beach</option>
 								<option value="Church">Church</option>
-								<option value="Home / backyard">Home / Backyard</option>
-								<option value="Function centre">Function Centre</option>
-								<option value="Restaurant / cafe">Restaurant / Café</option>
+								<option value="Hall">Hall</option>
+								<option value="Garden">Garden</option>
 								<option value="Other">Other</option>
 							</select>
 						</div>
